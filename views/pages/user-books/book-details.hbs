@@ -1,0 +1,19 @@
+<h2>Book details</h2>
+
+<h3>Title: {{book.title}}</h3>
+<p>Authors: {{book.authors}}</p>
+<p>Published in: {{book.publishedDate}}</p>
+<p>Page count: {{book.pageCount}}</p>
+<p>Maturity rating: {{book.maturityRating}}</p>
+
+<h4>Genre: {{book.categories}}</h4>
+<p>Description: {{book.description}}</p>
+
+<img src="{{book.bookPictureUrl}}" />
+
+<br />
+<a href="/books/{{book._id}}/edit">Edit</a>
+<br />
+<a href="/books/{{book._id}}/delete">Delete</a>
+<br />
+<a href="/books">Back to My Bookshelf</a>
