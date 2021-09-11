@@ -1,0 +1,16 @@
+<h1>Book search results</h1>
+<ul>
+{{#each books.data.items}}
+<li>
+<img src="{{this.volumeInfo.imageLinks.thumbnail}}" alt="">
+<h2>{{this.volumeInfo.title}}</h2>
+{{#each this.volumeInfo.authors}}
+<h3>{{this}}</h3>
+{{/each}}
+{{#if this.volumeInfo.description}} 
+<p> {{splitUrl this.volumeInfo.description}}</p>
+{{/if}}
+</li>
+
+{{/each}}
+</ul>
