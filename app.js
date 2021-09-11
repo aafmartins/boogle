@@ -6,6 +6,7 @@ var express = require("express");
 var indexRouter = require("./routes/index.routes");
 var usersRouter = require("./routes/users.routes");
 var authRouter = require("./routes/auth.routes");
+var bookApiRouter = require("./routes/bookApi.routes");
 
 var app = express();
 
@@ -16,6 +17,7 @@ require("./config/global")(app);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/", authRouter);
+app.use("/", bookApiRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

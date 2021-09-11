@@ -33,7 +33,9 @@ module.exports = (app) => {
   app.set("view engine", "hbs");
 
   hbs.registerPartials(path.join(__dirname, "/views/partials"));
-
+  hbs.registerHelper('splitUrl', function (string) {
+    return string.split(/\s+/).slice(0, 20).join(" ") + "...";
+  });
   // Handles access to the public folder
   app.use(express.static(path.join(__dirname, "..", "public")));
 
