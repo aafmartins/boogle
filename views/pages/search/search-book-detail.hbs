@@ -1,16 +1,19 @@
 <h1>Book details</h1>
-<form action="/{{bookId}}" method="POST">
-<h1>{{book.title}}</h1>
-{{#each book.authors}}
-{{this}}
-{{/each}}
-<p>{{book.description}}</p>
+<form action="/my-saved-books" method="POST">
+  <h1>{{book.title}}</h1>
+  {{#each book.authors}}
+    {{this}}
+  {{/each}}
+  <p>{{book.description}}</p>
 
-<img src="{{book.imageLinks.thumbnail}}" alt="">
-<p>Publisher: {{book.publisher}}</p>
-<p>Published Date: {{book.publishedDate}}</p>
-<p>Page count: {{book.pageCount}}</p>
-<p>{{book.industryIdentifiers.1.type}}:{{book.industryIdentifiers.1.identifier}}</p>
+  <img src="{{book.imageLinks.thumbnail}}" alt="" />
+  <p>Publisher: {{book.publisher}}</p>
+  <p>Published Date: {{book.publishedDate}}</p>
+  <p>Page count: {{book.pageCount}}</p>
+  <p
+  >{{book.industryIdentifiers.1.type}}:{{book.industryIdentifiers.1.identifier}}</p>
 
-    <button type="submit">Add</button>
+  <button type="submit">Add</button>
 </form>
+
+{{!-- {{bookId}} --}}
