@@ -1,9 +1,6 @@
-const {
-  Schema,
-  model
-} = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const bookSchema = new Schema({
+const createdBookSchema = new Schema({
   title: String,
   authors: [String],
   publishedDate: Date,
@@ -14,6 +11,6 @@ const bookSchema = new Schema({
   maturityRating: String,
 });
 
-const Book = model("Book", bookSchema);
+const CreatedBook = model("Book", createdBookSchema);
 
-module.exports = Book;
+module.exports = CreatedBook;

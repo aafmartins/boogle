@@ -16,10 +16,20 @@ const userSchema = new Schema({
     required: true,
   },
   avatarUrl: String,
-  // bookshelf: [{ type: Schema.Types.ObjectId, ref: "Book", default: [] }],
-  // createdBooks: [
-  //   { type: Schema.Types.ObjectId, ref: "CreatedBooks", default: [] },
-  // ],
+  savedBooks: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "SavedBook",
+      default: [],
+    },
+  ],
+  createdBooks: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "CreatedBook",
+      default: [],
+    },
+  ],
 });
 
 const User = model("User", userSchema);
