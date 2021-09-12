@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 const User = require("../models/User.model");
+const CreatedBook = require("../models/User.model");
+const SavedBook = require("../models/User.model");
 const bcrypt = require("bcrypt");
 const saltRounds = process.env.SALT || 10;
 

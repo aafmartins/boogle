@@ -1,10 +1,10 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
-<form action="/book-search" method="GET">
+<form action="/search/book-search" method="GET">
 
   <label for="title">Title: </label>
-  <input type="text" name="title"/>
+  <input type="text" name="title" />
 
   <label for="author">Author:</label>
   <input type="text" name="author" id="author" />
@@ -12,30 +12,25 @@
   <label for="generic">Generic:</label>
   <input type="text" name="generic" id="generic" />
 
-<label for="genre">Genre:</label>
-<select name="genre" id="genre">
-  <option disable selected value="">Select a genre from the list</option>
-  <option value="adventure">Adventure</option>
-  <option value="art">Art</option>
-  <option value="bio">Biography</option>
-  <option value="children">Children</option>
-  <option value="crime">Crime</option> 
-  <option value="drama">Drama</option>
-  <option value="fiction">Fiction</option>
-  <option value="history">History</option>
-  <option value="horror">Horror</option>
-  <option value="liter">Literature</option>
-  <option value="poetry">Poetry</option>
-  <option value="romance">Romance</option>  
-  <option value="stor">Stories</option>
-  <option value="thriller">Thriller</option>
-  <option value="travel">Travel</option>
-</select>
+  <label for="genre">Genre:</label>
+  <select name="genre" id="genre">
+    <option disable selected value="">Select a genre from the list</option>
+    <option value="adventure">Adventure</option>
+    <option value="art">Art</option>
+    <option value="bio">Biography</option>
+    <option value="children">Children</option>
+    <option value="crime">Crime</option>
+    <option value="drama">Drama</option>
+    <option value="fiction">Fiction</option>
+    <option value="history">History</option>
+    <option value="horror">Horror</option>
+    <option value="liter">Literature</option>
+    <option value="poetry">Poetry</option>
+    <option value="romance">Romance</option>
+    <option value="stor">Stories</option>
+    <option value="thriller">Thriller</option>
+    <option value="travel">Travel</option>
+  </select>
 
   <button type="submit">Search</button>
 </form>
-
-
-
-
-

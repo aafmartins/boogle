@@ -1,13 +1,13 @@
 const GoogleBookApi = require("../service/index");
 const useBooksApiHandler = new GoogleBookApi();
-const express = require("express");
-const router = express.Router();
 const SavedBook = require("../models/SavedBook.model");
+const User = require("../models/User.model");
+const router = require("express").Router();
 
 router.get("/book-search", (req, res, next) => {
   const { title, author, generic, genre } = req.query;
 
-  console.log(title, author, generic, genre);
+  //console.log(title, author, generic, genre);
 
   let query = ``;
 
@@ -46,8 +46,8 @@ router.get("/book-search", (req, res, next) => {
   useBooksApiHandler
     .getAllBooks(params)
     .then((result) => {
-      console.log("yayya", params);
-      console.log(result.data.items[0].volumeInfo);
+      // console.log("yayya", params);
+      // console.log(result.data.items[0].volumeInfo);
       res.render("pages/search/search-results", {
         books: result,
       });
@@ -72,16 +72,17 @@ router.get("/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.post("/my-saved-books", (req, res) => {
+router.post("/:id", (req, res) => {
   const id = req.params.id;
+  // console.log("Our id:", id);
 
   // console.log(id)
   useBooksApiHandler
     .getBookById(id)
     .then((result) => {
       let book = result.data.volumeInfo;
-      // console.log('Our result: ', result)
-      // console.log('Our book:', book);
+
+      const user = req.session.currentUser;
       let newBook = {
         title: book.title || "not available",
         authors: book.authors[0] || "not available",
@@ -90,14 +91,17 @@ router.post("/my-saved-books", (req, res) => {
         pageCount: book.pageCount || "not available",
         categories: book.categories[0] || "not available",
         maturityRating: book.maturityRating || "not available",
+        user,
       };
-      console.log("new book:", {
-        newBook,
-      });
 
       SavedBook.create(newBook)
-        .then((result) => {
-          res.redirect("/");
+        .then((savedBook) => {
+          console.log("Inside the first then:", savedBook);
+          User.findByIdAndUpdate(user._id, {
+            $push: { savedBooks: savedBook },
+          })
+            .then((updatedUser) => res.redirect("/bookshelf/my-saved-books"))
+            .catch((err) => console.log(err));
         })
         .catch((err) => {
           console.log("was not able to add a new book to collection");

@@ -1,7 +1,7 @@
 //1 import packages and User model
-const router = require("express").Router();
+const User = require("../models/User.model");
 const CreatedBook = require("../models/CreatedBook.model");
-// const User = require("../models/User.model");
+const router = require("express").Router();
 const fileUploader = require("../config/cloudinary");
 
 //CREATE NEW BOOK
@@ -26,6 +26,8 @@ router.post("/new-book", fileUploader.single("bookPictureUrl"), (req, res) => {
     maturityRating,
   } = req.body;
   const bookPictureUrl = req.file.path;
+  const user = req.session.currentUser;
+  console.log(user);
 
   CreatedBook.create({
     title,
@@ -36,8 +38,17 @@ router.post("/new-book", fileUploader.single("bookPictureUrl"), (req, res) => {
     categories,
     maturityRating,
     bookPictureUrl,
+    user,
   })
-    .then((newBook) => res.redirect("/books"))
+    .then((newBook) => {
+      User.findByIdAndUpdate(user._id, {
+        $push: { createdBooks: newBook },
+      })
+        .then((updatedUser) => {
+          res.redirect("/bookshelf/my-created-books");
+        })
+        .catch((err = console.log(err)));
+    })
     .catch((err) => {
       console.log(err);
       res.redirect("/new-book");
@@ -108,16 +119,16 @@ router.get("/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-//DISPLAY ALL BOOKS
-router.get("/", (req, res) => {
-  CreatedBook.find()
-    .then((books) => {
-      // console.log(books);
-      res.render("pages/user-books/my-book-list", {
-        books,
-      });
-    })
-    .catch((err) => console.log(err));
-});
+// //DISPLAY ALL BOOKS
+// router.get("/", (req, res) => {
+//   CreatedBook.find()
+//     .then((books) => {
+//       // console.log(books);
+//       res.render("pages/user-books/my-book-list", {
+//         books,
+//       });
+//     })
+//     .catch((err) => console.log(err));
+// });
 
 module.exports = router;
