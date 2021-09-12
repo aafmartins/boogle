@@ -7,7 +7,9 @@ var indexRouter = require("./routes/index.routes");
 var usersRouter = require("./routes/users.routes");
 var authRouter = require("./routes/auth.routes");
 var bookApiRouter = require("./routes/bookApi.routes");
-var bookRouter = require("./routes/book.routes");
+var createdBookRouter = require("./routes/created.book.routes");
+var savedBookRouter = require("./routes/saved.book.routes");
+var bookshelfRouter = require("./routes/bookshelf.routes");
 
 var app = express();
 
@@ -17,9 +19,11 @@ require("./config/global")(app);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/", authRouter);
-app.use("/", bookApiRouter);
-app.use("/books", bookRouter);
+app.use("/auth", authRouter);
+app.use("/books", createdBookRouter);
+app.use("/my-saved-books", savedBookRouter);
+app.use("/search", bookApiRouter);
+app.use("/bookshelf", bookshelfRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

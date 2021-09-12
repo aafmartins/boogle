@@ -1,0 +1,12 @@
+<form action="/users/{{user.id}}/edit" method="POST">
+  <label for="username">Username: </label>
+  <input type="text" name="username" value={{user.username}} required />
+
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" value={{user.email}} required />
+
+  <label for="password">Password:</label>
+  <input type="password" name="password" id="password" value="*****" required />
+
+  <button type="submit">Submit</button>
+</form>

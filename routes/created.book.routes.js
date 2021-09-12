@@ -1,14 +1,16 @@
 //1 import packages and User model
+const User = require("../models/User.model");
+const CreatedBook = require("../models/CreatedBook.model");
 const router = require("express").Router();
-const Book = require("../models/Book.model");
-// const User = require("../models/User.model");
 const fileUploader = require("../config/cloudinary");
 
 //CREATE NEW BOOK
 router.get("/new-book", (req, res) => {
-  Book.find()
+  CreatedBook.find()
     .then((books) => {
-      res.render("pages/user-books/new-book", { books: books });
+      res.render("pages/user-books/new-book", {
+        books: books,
+      });
     })
     .catch((err) => console.log(err));
 });
@@ -24,8 +26,10 @@ router.post("/new-book", fileUploader.single("bookPictureUrl"), (req, res) => {
     maturityRating,
   } = req.body;
   const bookPictureUrl = req.file.path;
+  const user = req.session.currentUser;
+  console.log(user);
 
-  Book.create({
+  CreatedBook.create({
     title,
     authors,
     publishedDate,
@@ -34,8 +38,17 @@ router.post("/new-book", fileUploader.single("bookPictureUrl"), (req, res) => {
     categories,
     maturityRating,
     bookPictureUrl,
+    user,
   })
-    .then((newBook) => res.redirect("/books"))
+    .then((newBook) => {
+      User.findByIdAndUpdate(user._id, {
+        $push: { createdBooks: newBook },
+      })
+        .then((updatedUser) => {
+          res.redirect("/bookshelf/my-created-books");
+        })
+        .catch((err = console.log(err)));
+    })
     .catch((err) => {
       console.log(err);
       res.redirect("/new-book");
@@ -45,7 +58,7 @@ router.post("/new-book", fileUploader.single("bookPictureUrl"), (req, res) => {
 //DELETE BOOKS
 router.get("/:id/delete", (req, res) => {
   const id = req.params.id;
-  Book.findByIdAndDelete(id)
+  CreatedBook.findByIdAndDelete(id)
     .then((deletedBook) => {
       res.redirect("/books");
     })
@@ -56,10 +69,12 @@ router.get("/:id/delete", (req, res) => {
 router.get("/:id/edit", (req, res) => {
   const id = req.params.id;
 
-  Book.findById(id)
+  CreatedBook.findById(id)
     .then((book) => {
       console.log(book);
-      res.render("pages/user-books/edit-book", { book });
+      res.render("pages/user-books/edit-book", {
+        book,
+      });
     })
     .catch((err) => console.log(err));
 });
@@ -77,7 +92,7 @@ router.post("/:id/edit", (req, res) => {
   } = req.body;
   // const bookPictureUrl = req.file.path;
 
-  Book.findByIdAndUpdate(id, {
+  CreatedBook.findByIdAndUpdate(id, {
     title,
     authors,
     publishedDate,
@@ -95,21 +110,25 @@ router.post("/:id/edit", (req, res) => {
 //BOOK DETAILS
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-  Book.findById(id)
+  CreatedBook.findById(id)
     .then((book) => {
-      res.render("pages/user-books/book-details", { book: book });
+      res.render("pages/user-books/book-details", {
+        book: book,
+      });
     })
     .catch((err) => console.log(err));
 });
 
-//DISPLAY ALL BOOKS
-router.get("/", (req, res) => {
-  Book.find()
-    .then((books) => {
-      // console.log(books);
-      res.render("pages/user-books/book-list", { books });
-    })
-    .catch((err) => console.log(err));
-});
+// //DISPLAY ALL BOOKS
+// router.get("/", (req, res) => {
+//   CreatedBook.find()
+//     .then((books) => {
+//       // console.log(books);
+//       res.render("pages/user-books/my-book-list", {
+//         books,
+//       });
+//     })
+//     .catch((err) => console.log(err));
+// });
 
 module.exports = router;
