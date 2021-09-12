@@ -8,7 +8,9 @@ const fileUploader = require("../config/cloudinary");
 router.get("/new-book", (req, res) => {
   Book.find()
     .then((books) => {
-      res.render("pages/user-books/new-book", { books: books });
+      res.render("pages/user-books/new-book", {
+        books: books
+      });
     })
     .catch((err) => console.log(err));
 });
@@ -26,15 +28,15 @@ router.post("/new-book", fileUploader.single("bookPictureUrl"), (req, res) => {
   const bookPictureUrl = req.file.path;
 
   Book.create({
-    title,
-    authors,
-    publishedDate,
-    description,
-    pageCount,
-    categories,
-    maturityRating,
-    bookPictureUrl,
-  })
+      title,
+      authors,
+      publishedDate,
+      description,
+      pageCount,
+      categories,
+      maturityRating,
+      bookPictureUrl,
+    })
     .then((newBook) => res.redirect("/books"))
     .catch((err) => {
       console.log(err);
@@ -59,7 +61,9 @@ router.get("/:id/edit", (req, res) => {
   Book.findById(id)
     .then((book) => {
       console.log(book);
-      res.render("pages/user-books/edit-book", { book });
+      res.render("pages/user-books/edit-book", {
+        book
+      });
     })
     .catch((err) => console.log(err));
 });
@@ -78,14 +82,14 @@ router.post("/:id/edit", (req, res) => {
   // const bookPictureUrl = req.file.path;
 
   Book.findByIdAndUpdate(id, {
-    title,
-    authors,
-    publishedDate,
-    description,
-    pageCount,
-    categories,
-    maturityRating,
-  })
+      title,
+      authors,
+      publishedDate,
+      description,
+      pageCount,
+      categories,
+      maturityRating,
+    })
     .then(() => {
       res.redirect("/books");
     })
@@ -97,7 +101,9 @@ router.get("/:id", (req, res) => {
   const id = req.params.id;
   Book.findById(id)
     .then((book) => {
-      res.render("pages/user-books/book-details", { book: book });
+      res.render("pages/user-books/book-details", {
+        book: book
+      });
     })
     .catch((err) => console.log(err));
 });
@@ -107,7 +113,9 @@ router.get("/", (req, res) => {
   Book.find()
     .then((books) => {
       // console.log(books);
-      res.render("pages/user-books/book-list", { books });
+      res.render("pages/user-books/my-book-list", {
+        books
+      });
     })
     .catch((err) => console.log(err));
 });

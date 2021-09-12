@@ -1,0 +1,11 @@
+<h1>My Saved Books</h1>
+<ul>
+
+  {{#each books}}
+    <li>
+
+      {{this.title}}
+      <a href="/my-saved-books/{{this._id}}">View details</a>
+    </li>
+  {{/each}}
+</ul>
