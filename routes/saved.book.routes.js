@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const SavedBook = require("../models/SavedBook.model");
+const GoogleBookApi = require("../service/index");
+const useBooksApiHandler = new GoogleBookApi();
 
 //DELETE BOOKS
 router.get("/:id/delete", (req, res) => {

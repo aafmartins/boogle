@@ -1,5 +1,5 @@
 <h1>Book details</h1>
-<form action="/my-saved-books" method="POST">
+<form action="/search/{{bookId}}" method="POST">
   <h1>{{book.title}}</h1>
   {{#each book.authors}}
     {{this}}

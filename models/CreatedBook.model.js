@@ -9,8 +9,12 @@ const createdBookSchema = new Schema({
   pageCount: Number,
   categories: [String],
   maturityRating: String,
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
-const CreatedBook = model("Book", createdBookSchema);
+const CreatedBook = model("CreatedBook", createdBookSchema);
 
 module.exports = CreatedBook;
