@@ -14,6 +14,7 @@ router.get("/", function (req, res, next) {
         title: "Boogle",
         users: users,
         currentUser: id,
+        style: "Home/index-home.css"
       });
     })
     .catch((err) => console.log(err));

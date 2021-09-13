@@ -12,34 +12,42 @@ router.get("/new-book", isLoggedIn, (req, res) => {
     .then((books) => {
       res.render("pages/user-books/new-book", {
         books: books,
+        style: "Create-Book/display.css"
       });
     })
     .catch((err) => console.log(err));
 });
 
 router.post("/new-book", fileUploader.single("bookPictureUrl"), (req, res) => {
-  const { title, authors, publishedDate, description, pageCount, categories } =
-    req.body;
-  const bookPictureUrl = req.file.path;
-  const user = req.session.currentUser;
-  console.log(user);
-
-  CreatedBook.create({
+  const {
     title,
     authors,
     publishedDate,
     description,
     pageCount,
-    categories,
-    bookPictureUrl,
-    user,
-  })
+    categories
+  } =
+  req.body;
+  const bookPictureUrl = req.file.path;
+  const user = req.session.currentUser;
+  console.log(user);
+
+  CreatedBook.create({
+      title,
+      authors,
+      publishedDate,
+      description,
+      pageCount,
+      categories,
+      bookPictureUrl,
+      user,
+    })
     .then((newBook) => {
       User.findByIdAndUpdate(user._id, {
-        $push: {
-          createdBooks: newBook,
-        },
-      })
+          $push: {
+            createdBooks: newBook,
+          },
+        })
         .then((updatedUser) => {
           res.redirect("/bookshelf/my-created-books");
         })
@@ -70,6 +78,7 @@ router.get("/:id/edit", (req, res) => {
       console.log(book);
       res.render("pages/user-books/edit-book", {
         book,
+        style: "Bookshelves/edit.css"
       });
     })
     .catch((err) => console.log(err));
@@ -77,18 +86,25 @@ router.get("/:id/edit", (req, res) => {
 
 router.post("/:id/edit", (req, res) => {
   const id = req.params.id;
-  const { title, authors, publishedDate, description, pageCount, categories } =
-    req.body;
-  // const bookPictureUrl = req.file.path;
-
-  CreatedBook.findByIdAndUpdate(id, {
+  const {
     title,
     authors,
     publishedDate,
     description,
     pageCount,
-    categories,
-  })
+    categories
+  } =
+  req.body;
+  // const bookPictureUrl = req.file.path;
+
+  CreatedBook.findByIdAndUpdate(id, {
+      title,
+      authors,
+      publishedDate,
+      description,
+      pageCount,
+      categories,
+    })
     .then(() => {
       res.redirect(`/books/${id}`);
     })
@@ -102,6 +118,7 @@ router.get("/:id", (req, res) => {
     .then((book) => {
       res.render("pages/user-books/book-details", {
         book: book,
+        style: "Bookshelves/details.css"
       });
     })
     .catch((err) => console.log(err));

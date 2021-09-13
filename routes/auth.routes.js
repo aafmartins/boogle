@@ -1,6 +1,5 @@
 //1 import packages and User model
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 
 const bcrypt = require("bcrypt");
 const saltRounds = process.env.SALT || 10;
@@ -14,11 +13,17 @@ const fileUploader = require("../config/cloudinary");
 
 //2 - Create 5 routes: 2 for login, 2 for signup and 1 for logout
 router.get("/signup", isNotLoggedIn, (req, res) => {
-  res.render("pages/auth/signup");
+  res.render("pages/auth/signup", {
+    style: "Login-Signup/auth.css"
+  });
 });
 
 router.post("/signup", (req, res, next) => {
-  const { username, email, password } = req.body;
+  const {
+    username,
+    email,
+    password
+  } = req.body;
 
   if (
     !username ||
@@ -30,17 +35,19 @@ router.post("/signup", (req, res, next) => {
     !email.includes("@")
   ) {
     res.render("pages/auth/signup", {
-      errorMessage: "Username and password are requiered",
+      errorMessage: "Username and password are required",
+      style: "error.css"
     });
   }
 
   User.findOne({
-    username,
-  })
+      username,
+    })
     .then((user) => {
       if (user) {
         res.render("pages/auth/signup", {
           errorMessage: "User already exists",
+          style: "error.css"
         });
       }
 
@@ -48,12 +55,14 @@ router.post("/signup", (req, res, next) => {
       const hashPassword = bcrypt.hashSync(password, salt);
 
       User.create({
-        username,
-        email,
-        password: hashPassword,
-      })
+          username,
+          email,
+          password: hashPassword,
+        })
         .then(() => {
-          User.findOne({ username: username })
+          User.findOne({
+              username: username
+            })
             .then((user) => {
               req.session.currentUser = user;
               if (user) {
@@ -65,6 +74,7 @@ router.post("/signup", (req, res, next) => {
         .catch((error) =>
           res.render("pages/auth/signup", {
             errorMessage: error,
+            style: "error.css"
           })
         );
     })
@@ -72,27 +82,34 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.get("/login", isNotLoggedIn, (req, res) => {
-  res.render("pages/auth/login");
+  res.render("pages/auth/login", {
+    style: "Login-Signup/auth.css"
+  });
 });
 
 router.post("/login", (req, res) => {
   //GET VALUES FROM FORM
-  const { username, password } = req.body;
+  const {
+    username,
+    password
+  } = req.body;
 
   //VALIDATE INPUT
   if (!username || username === "" || !password || password === "") {
     res.render("pages/auth/signup", {
       errorMessage: "Something went wrong",
+      style: "error.css"
     });
   }
 
   User.findOne({
-    username,
-  })
+      username,
+    })
     .then((user) => {
       if (!user) {
         res.render("pages/auth/login", {
           errorMessage: "Input invalid",
+          style: "error.css"
         });
       } else {
         const encryptedPassword = user.password;
@@ -104,6 +121,7 @@ router.post("/login", (req, res) => {
         } else {
           res.render("pages/auth/login", {
             errorMessage: "Input invalid",
+            style: "error.css"
           });
         }
       }
@@ -117,6 +135,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       res.render("error", {
         message: "Something went wrong! Yikes!",
+        style: "error.css"
       });
     } else {
       res.redirect("/");
