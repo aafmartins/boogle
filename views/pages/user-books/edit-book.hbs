@@ -18,11 +18,29 @@
   <label for="pageCount">Page count</label>
   <input type="number" name="pageCount" value="{{book.pageCount}}" />
   <br />
-  <label for="categories">Genre</label>
-  <input type="text" name="categories" value="{{book.categories}}" />
-  <br />
-  <label for="maturityRating">Maturity Rating</label>
-  <input type="text" name="maturityRating" value="{{book.maturityRating}}" />
+
+  <label for="categories">Genre:</label>
+  <select name="categories" id="categories" required>
+    <option disable selected value="">{{book.categories}}</option>
+    <option value="adventure">Adventure</option>
+    <option value="art">Art</option>
+    <option value="bio">Biography</option>
+    <option value="children">Children</option>
+    <option value="crime">Crime</option>
+    <option value="detective">Detective</option>
+    <option value="drama">Drama</option>
+    <option value="fiction">Fiction</option>
+    <option value="history">History</option>
+    <option value="horror">Horror</option>
+    <option value="liter">Literature</option>
+    <option value="mystery">Mystery</option>
+    <option value="poetry">Poetry</option>
+    <option value="romance">Romance</option>
+    <option value="spiral">Spirality</option>
+    <option value="stor">Stories</option>
+    <option value="thriller">Thriller</option>
+    <option value="travel">Travel</option>
+  </select>
   <br />
   <button type="submit">Save</button>
 

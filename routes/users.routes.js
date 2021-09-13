@@ -6,6 +6,8 @@ const SavedBook = require("../models/User.model");
 const bcrypt = require("bcrypt");
 const saltRounds = process.env.SALT || 10;
 
+const isLoggedIn = require("../middleware/isLoggedIn");
+
 //require cloudinary configuration file
 const fileUploader = require("../config/cloudinary");
 
@@ -35,11 +37,7 @@ router.get("/:id/edit", (req, res) => {
 
 router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
   const id = req.params.id;
-  const {
-    username,
-    email,
-    password
-  } = req.body;
+  const { username, email, password } = req.body;
   const avatarUrl = req.file.path;
   if (
     !username ||
@@ -59,24 +57,26 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
   const hashPassword = bcrypt.hashSync(password, salt);
 
   User.findByIdAndUpdate(id, {
-      username,
-      email,
-      password: hashPassword,
-      avatarUrl
-    })
+    username,
+    email,
+    password: hashPassword,
+    avatarUrl,
+  })
     .then(() => res.redirect("/users/profile"))
-    .catch((error) => res.render("pages/auth/signup", {
-      errorMessage: error
-    }));
+    .catch((error) =>
+      res.render("pages/auth/signup", {
+        errorMessage: error,
+      })
+    );
 });
 
 //DISPLAY PROFILE
-router.get("/profile", (req, res) => {
+router.get("/profile", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
     User.findById(req.session.currentUser._id).then((user) => {
       console.log("The user:", user);
       res.render("pages/user/profile", {
-        user
+        user,
       });
     });
   } else res.redirect("/");
