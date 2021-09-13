@@ -1,11 +1,25 @@
-<h1>My Books</h1>
-<ul>
 
+<h1>My Created Books</h1>
+
+
+<ul>
   {{#each result}}
     <li>
+<div class="mainContainer">      
+      <div class="detailsContainer"> 
+        <h2>{{this.title}}</h2>
 
-      {{this.title}}
-      <a href="/books/{{this._id}}">View details</a>
+        <h4>{{this.authors}}</h4>
+        <h5>{{this.description}}</h5>
+
+        <a class="viewMoreBtn" href="/books/{{this._id}}">Read more</a>
+
+      </div>
+            <div class="imageContainer">
+        <img src="{{this.bookPictureUrl}}" alt=""/>
+
+      </div>
+</div>
     </li>
   {{/each}}
 </ul>

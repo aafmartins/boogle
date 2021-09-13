@@ -97,12 +97,13 @@ router.post("/:id", (req, res) => {
           pageCount,
           categories = ["No category available"],
       } = book;
-
+      const bookPictureUrl = book.imageLinks.thumbnail
       SavedBook.create({
           title,
           authors,
           publishedDate,
           description,
+          bookPictureUrl,
           pageCount,
           categories,
           user: user._id,

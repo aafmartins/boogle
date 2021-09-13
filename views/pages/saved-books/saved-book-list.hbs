@@ -1,10 +1,24 @@
 <h1>My Saved Books</h1>
-<ul>
 
+
+<ul>
   {{#each result}}
     <li>
-      {{this.title}}
-      <a href="/my-saved-books/{{this._id}}">View details</a>
+<div class="mainContainer">      
+      <div class="detailsContainer"> 
+        <h2>{{this.title}}</h2>
+
+        <h4>{{this.authors}}</h4>
+        <h5>{{this.description}}</h5>
+
+        <a class="viewMoreBtn" href="/my-saved-books/{{this._id}}">Read more</a>
+
+      </div>
+            <div class="imageContainer">
+        <img src="{{this.bookPictureUrl}}" alt=""/>
+
+      </div>
+</div>
     </li>
   {{/each}}
 </ul>
