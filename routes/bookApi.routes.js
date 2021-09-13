@@ -7,7 +7,12 @@ const router = require("express").Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/book-search", (req, res, next) => {
-  const { title, author, generic, genre } = req.query;
+  const {
+    title,
+    author,
+    generic,
+    genre
+  } = req.query;
 
   let query = ``;
 
@@ -50,6 +55,7 @@ router.get("/book-search", (req, res, next) => {
       // console.log(result.data.items[0].volumeInfo);
       res.render("pages/search/search-results", {
         books: result,
+        style: "Search-Result/list.css"
       });
     })
     .catch((err) => {
@@ -67,6 +73,7 @@ router.get("/:id", isLoggedIn, (req, res) => {
       res.render("pages/search/search-book-detail", {
         book: book.data.volumeInfo,
         bookId: book.data.id,
+        style: "Search-Result/details.css"
       });
     })
     .catch((err) => console.log(err));
@@ -84,30 +91,30 @@ router.post("/:id", (req, res) => {
 
       const {
         title = "Not available",
-        authors = ["No authors known"],
-        publishedDate = "",
-        description,
-        pageCount,
-        categories = ["No category available"],
+          authors = ["No authors known"],
+          publishedDate = "",
+          description,
+          pageCount,
+          categories = ["No category available"],
       } = book;
 
       SavedBook.create({
-        title,
-        authors,
-        publishedDate,
-        description,
-        pageCount,
-        categories,
-        user: user._id,
-      })
+          title,
+          authors,
+          publishedDate,
+          description,
+          pageCount,
+          categories,
+          user: user._id,
+        })
         .then((savedBook) => {
           console.log("Inside the first then:", savedBook);
 
           User.findByIdAndUpdate(user._id, {
-            $push: {
-              savedBooks: savedBook._id,
-            },
-          })
+              $push: {
+                savedBooks: savedBook._id,
+              },
+            })
             .then(() => res.redirect("/bookshelf/my-saved-books"))
             .catch((err) => console.log(err));
         })

@@ -1,36 +1,24 @@
 const router = require("express").Router();
 const SavedBook = require("../models/SavedBook.model");
-const GoogleBookApi = require("../service/index");
-const useBooksApiHandler = new GoogleBookApi();
 
-//DELETE BOOKS
+//DELETE BOOKS SAVED FROM API
 router.get("/:id/delete", (req, res) => {
   const id = req.params.id;
   SavedBook.findByIdAndDelete(id)
-    .then((deletedBook) => {
+    .then(() => {
       res.redirect("/my-saved-books");
     })
     .catch((err) => console.log(err));
 });
 
-//BOOK DETAILS
+//DISPLAY DETAILS OF BOOKS SAVED FROM API
 router.get("/:id", (req, res) => {
   const id = req.params.id;
   SavedBook.findById(id)
     .then((book) => {
       res.render("pages/saved-books/saved-book-details", {
         book: book,
-      });
-    })
-    .catch((err) => console.log(err));
-});
-
-//DISPLAY ALL BOOKS
-router.get("/", (req, res) => {
-  SavedBook.find()
-    .then((books) => {
-      res.render("pages/saved-books/saved-book-list", {
-        books: books,
+        style: "Bookshelves/details.css"
       });
     })
     .catch((err) => console.log(err));

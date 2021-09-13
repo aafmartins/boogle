@@ -1,7 +1,23 @@
+/* 
+colors:
+Brand / Dark Petrol: #294B53;
+Secondary/Warm grey 40% or 60%: #E9E8E1;
+Primary/Volcano/4: #FF9C6E; (dark salmon)
+Secondary/Volcano/1: #FFF2E8; (light salmon)
+*/
+
+
+* {
+  font-family: 'Roboto';
+}
+
+
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
 
 a {
   color: #00B7FF;
