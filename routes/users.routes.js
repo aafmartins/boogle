@@ -44,7 +44,7 @@ router.post("/:id/edit", (req, res) => {
     !email.includes("@")
   ) {
     res.render("pages/auth/signup", {
-      errorMessage: "Username and password are requiered",
+      errorMessage: "Username and password are required",
     });
   }
 
