@@ -30,14 +30,23 @@ router.get("/:id/edit", (req, res) => {
       console.log(user);
       res.render("pages/user/edit-profile", {
         user,
+        style: "Profile/edit-profile.css"
       });
     })
     .catch((err) => console.log(err));
 });
 
+{
+  style: "Login-Signup/auth.css"
+}
+
 router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
   const id = req.params.id;
-  const { username, email, password } = req.body;
+  const {
+    username,
+    email,
+    password
+  } = req.body;
   const avatarUrl = req.file.path;
   if (
     !username ||
@@ -49,7 +58,8 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
     !email.includes("@")
   ) {
     res.render("pages/auth/signup", {
-      errorMessage: "Username and password are requiered",
+      errorMessage: "Username and password are required",
+      style: "error.css"
     });
   }
 
@@ -57,15 +67,16 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
   const hashPassword = bcrypt.hashSync(password, salt);
 
   User.findByIdAndUpdate(id, {
-    username,
-    email,
-    password: hashPassword,
-    avatarUrl,
-  })
+      username,
+      email,
+      password: hashPassword,
+      avatarUrl,
+    })
     .then(() => res.redirect("/users/profile"))
     .catch((error) =>
       res.render("pages/auth/signup", {
         errorMessage: error,
+        style: "error.css"
       })
     );
 });
@@ -77,6 +88,7 @@ router.get("/profile", isLoggedIn, (req, res) => {
       console.log("The user:", user);
       res.render("pages/user/profile", {
         user,
+        style: "Profile/profile.css"
       });
     });
   } else res.redirect("/");

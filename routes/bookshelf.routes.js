@@ -14,6 +14,7 @@ router.get("/my-saved-books", isLoggedIn, (req, res) => {
         console.log("What we're dealing with:", result.savedBooks);
         res.render("pages/saved-books/saved-book-list", {
           result: result.savedBooks,
+          style: "Bookshelves/list.css"
         });
       })
       .catch((err) => console.log(err));
@@ -30,6 +31,7 @@ router.get("/my-created-books", isLoggedIn, (req, res) => {
         console.log("What we're dealing with:", result.createdBooks);
         res.render("pages/user-books/my-book-list", {
           result: result.createdBooks,
+          style: "Bookshelves/list.css"
         });
       })
       .catch((err) => console.log(err));
