@@ -1,13 +1,52 @@
-<form action="/auth/login" method="POST">
-  <label for="username">Username: </label>
-  <input type="text" name="username" minlength="3" maxlength="10" required />
+<div class="auth-container">
 
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password" required />
+  <div class="form-container">
 
-  <button type="submit">Submit</button>
-</form>
+    <form action="/auth/login" method="POST">
 
-{{#if errorMessage}}
-  <p>{{errorMessage}}</p>
-{{/if}}
+      <div class="heading">
+        <h1>Log In</h1>
+      </div>
+
+      <div class="input-container">
+        <div>
+          <label for="username">Username: </label>
+        </div>
+        <div>
+          <input
+            type="text"
+            name="username"
+            minlength="3"
+            maxlength="10"
+            placeholder="Your username"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="input-container">
+        <div><label for="password">Password:</label></div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Your password"
+            required
+          />
+        </div>
+      </div>
+
+      <div><button class="submit-btn" type="submit">Submit</button></div>
+
+    </form>
+
+  </div>
+
+  <div class="error-container">
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+  </div>
+
+</div>
