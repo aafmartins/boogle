@@ -30,24 +30,26 @@ router.post("/new-book", fileUploader.single("bookPictureUrl"), (req, res) => {
   console.log(user);
 
   CreatedBook.create({
-    title,
-    authors,
-    publishedDate,
-    description,
-    pageCount,
-    categories,
-    maturityRating,
-    bookPictureUrl,
-    user,
-  })
+      title,
+      authors,
+      publishedDate,
+      description,
+      pageCount,
+      categories,
+      maturityRating,
+      bookPictureUrl,
+      user,
+    })
     .then((newBook) => {
       User.findByIdAndUpdate(user._id, {
-        $push: { createdBooks: newBook },
-      })
+          $push: {
+            createdBooks: newBook
+          },
+        })
         .then((updatedUser) => {
           res.redirect("/bookshelf/my-created-books");
         })
-        .catch((err = console.log(err)));
+        .catch((err) => console.log(err));
     })
     .catch((err) => {
       console.log(err);
@@ -60,7 +62,7 @@ router.get("/:id/delete", (req, res) => {
   const id = req.params.id;
   CreatedBook.findByIdAndDelete(id)
     .then((deletedBook) => {
-      res.redirect("/books");
+      res.redirect("/bookshelf/my-created-books");
     })
     .catch((err) => console.log(err));
 });
@@ -93,16 +95,16 @@ router.post("/:id/edit", (req, res) => {
   // const bookPictureUrl = req.file.path;
 
   CreatedBook.findByIdAndUpdate(id, {
-    title,
-    authors,
-    publishedDate,
-    description,
-    pageCount,
-    categories,
-    maturityRating,
-  })
+      title,
+      authors,
+      publishedDate,
+      description,
+      pageCount,
+      categories,
+      maturityRating,
+    })
     .then(() => {
-      res.redirect("/books");
+      res.redirect(`/books/${id}`);
     })
     .catch((err) => console.log(err));
 });
