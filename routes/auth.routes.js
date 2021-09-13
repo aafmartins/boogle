@@ -17,9 +17,13 @@ router.get("/signup", (req, res) => {
   res.render("pages/auth/signup");
 });
 
-router.post("/signup", fileUploader.single("avatarUrl"), (req, res, next) => {
-  const { username, email, password } = req.body;
-  const avatarUrl = req.file.path;
+router.post("/signup", (req, res, next) => {
+  const {
+    username,
+    email,
+    password
+  } = req.body;
+
 
   if (
     !username ||
@@ -35,7 +39,9 @@ router.post("/signup", fileUploader.single("avatarUrl"), (req, res, next) => {
     });
   }
 
-  User.findOne({ username })
+  User.findOne({
+      username
+    })
     .then((user) => {
       if (user) {
         res.render("pages/auth/signup", {
@@ -46,10 +52,16 @@ router.post("/signup", fileUploader.single("avatarUrl"), (req, res, next) => {
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashPassword = bcrypt.hashSync(password, salt);
 
-      User.create({ username, email, password: hashPassword, avatarUrl })
+      User.create({
+          username,
+          email,
+          password: hashPassword
+        })
         .then(() => res.render("index"))
         .catch((error) =>
-          res.render("pages/auth/signup", { errorMessage: error })
+          res.render("pages/auth/signup", {
+            errorMessage: error
+          })
         );
     })
     .catch((error) => next(error));
@@ -61,17 +73,26 @@ router.get("/login", (req, res) => {
 
 router.post("/login", (req, res) => {
   //GET VALUES FROM FORM
-  const { username, password } = req.body;
+  const {
+    username,
+    password
+  } = req.body;
 
   //VALIDATE INPUT
   if (!username || username === "" || !password || password === "") {
-    res.render("pages/auth/signup", { errorMessage: "Something went wrong" });
+    res.render("pages/auth/signup", {
+      errorMessage: "Something went wrong"
+    });
   }
 
-  User.findOne({ username })
+  User.findOne({
+      username
+    })
     .then((user) => {
       if (!user) {
-        res.render("pages/auth/login", { errorMessage: "Input invalid" });
+        res.render("pages/auth/login", {
+          errorMessage: "Input invalid"
+        });
       } else {
         const encryptedPassword = user.password;
         const passwordCorrect = bcrypt.compareSync(password, encryptedPassword);
@@ -80,7 +101,9 @@ router.post("/login", (req, res) => {
           req.session.currentUser = user;
           res.redirect("/users/profile");
         } else {
-          res.render("pages/auth/login", { errorMessage: "Input invalid" });
+          res.render("pages/auth/login", {
+            errorMessage: "Input invalid"
+          });
         }
       }
     })
@@ -89,8 +112,11 @@ router.post("/login", (req, res) => {
 
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
+    console.log(req.session)
     if (err) {
-      res.render("error", { message: "Something went wrong! Yikes!" });
+      res.render("error", {
+        message: "Something went wrong! Yikes!"
+      });
     } else {
       res.redirect("/");
     }
