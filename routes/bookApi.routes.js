@@ -5,7 +5,12 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 
 router.get("/book-search", (req, res, next) => {
-  const { title, author, generic, genre } = req.query;
+  const {
+    title,
+    author,
+    generic,
+    genre
+  } = req.query;
 
   //console.log(title, author, generic, genre);
 
@@ -38,7 +43,7 @@ router.get("/book-search", (req, res, next) => {
   const params = {
     q: query || "old",
     key: process.env.BOOKAPI,
-    maxResults: 40,
+    maxResults: 20,
     langRestrict: "en",
     printType: "books",
   };
@@ -74,33 +79,43 @@ router.get("/:id", (req, res) => {
 
 router.post("/:id", (req, res) => {
   const id = req.params.id;
-  // console.log("Our id:", id);
-
-  // console.log(id)
   useBooksApiHandler
     .getBookById(id)
     .then((result) => {
-      let book = result.data.volumeInfo;
+      const book = result.data.volumeInfo;
+      console.log('Our user:', req.session, req.session.currentUser)
 
       const user = req.session.currentUser;
-      let newBook = {
-        title: book.title || "not available",
-        authors: book.authors[0] || "not available",
-        publishedDate: book.publishedDate || "not available",
-        description: book.description || "not available",
-        pageCount: book.pageCount || "not available",
-        categories: book.categories[0] || "not available",
-        maturityRating: book.maturityRating || "not available",
-        user,
-      };
 
-      SavedBook.create(newBook)
+      const {
+        title = "Not available",
+          authors = ["No authors known"],
+          publishedDate = "",
+          description,
+          pageCount,
+          categories = ["No category available"],
+          maturityRating = "Not rated"
+      } = book
+
+      SavedBook.create({
+          title,
+          authors,
+          publishedDate,
+          description,
+          pageCount,
+          categories,
+          maturityRating,
+          user: user._id
+        })
         .then((savedBook) => {
           console.log("Inside the first then:", savedBook);
+
           User.findByIdAndUpdate(user._id, {
-            $push: { savedBooks: savedBook },
-          })
-            .then((updatedUser) => res.redirect("/bookshelf/my-saved-books"))
+              $push: {
+                savedBooks: savedBook._id
+              }
+            })
+            .then(() => res.redirect("/bookshelf/my-saved-books"))
             .catch((err) => console.log(err));
         })
         .catch((err) => {
@@ -108,7 +123,7 @@ router.post("/:id", (req, res) => {
         });
     })
     .catch((err) => {
-      console.log("was not able to get info of book");
+      console.log("was not able to get info of book:" + err);
     });
 });
 
