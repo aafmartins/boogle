@@ -3,8 +3,10 @@ const router = require("express").Router();
 const CreatedBook = require("../models/CreatedBook.model");
 const SavedBook = require("../models/SavedBook.model");
 
+const isLoggedIn = require("../middleware/isLoggedIn");
+
 //DISPLAY SAVED BOOKS BOOKSHELF
-router.get("/my-saved-books", (req, res) => {
+router.get("/my-saved-books", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
     User.findById(req.session.currentUser._id)
       .populate("savedBooks")
@@ -19,7 +21,7 @@ router.get("/my-saved-books", (req, res) => {
 });
 
 //DISPLAY CREATED BOOKS BOOKSHELF
-router.get("/my-created-books", (req, res) => {
+router.get("/my-created-books", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
     console.log(req.session.currentUser);
     User.findById(req.session.currentUser._id)
