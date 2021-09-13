@@ -4,15 +4,10 @@ const SavedBook = require("../models/SavedBook.model");
 const User = require("../models/User.model");
 const router = require("express").Router();
 
-router.get("/book-search", (req, res, next) => {
-  const {
-    title,
-    author,
-    generic,
-    genre
-  } = req.query;
+const isLoggedIn = require("../middleware/isLoggedIn");
 
-  //console.log(title, author, generic, genre);
+router.get("/book-search", (req, res, next) => {
+  const { title, author, generic, genre } = req.query;
 
   let query = ``;
 
@@ -64,7 +59,7 @@ router.get("/book-search", (req, res, next) => {
 });
 
 //BOOK DETAILS
-router.get("/:id", (req, res) => {
+router.get("/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
   useBooksApiHandler
     .getBookById(id)
@@ -83,38 +78,36 @@ router.post("/:id", (req, res) => {
     .getBookById(id)
     .then((result) => {
       const book = result.data.volumeInfo;
-      console.log('Our user:', req.session, req.session.currentUser)
+      console.log("Our user:", req.session, req.session.currentUser);
 
       const user = req.session.currentUser;
 
       const {
         title = "Not available",
-          authors = ["No authors known"],
-          publishedDate = "",
-          description,
-          pageCount,
-          categories = ["No category available"],
-          maturityRating = "Not rated"
-      } = book
+        authors = ["No authors known"],
+        publishedDate = "",
+        description,
+        pageCount,
+        categories = ["No category available"],
+      } = book;
 
       SavedBook.create({
-          title,
-          authors,
-          publishedDate,
-          description,
-          pageCount,
-          categories,
-          maturityRating,
-          user: user._id
-        })
+        title,
+        authors,
+        publishedDate,
+        description,
+        pageCount,
+        categories,
+        user: user._id,
+      })
         .then((savedBook) => {
           console.log("Inside the first then:", savedBook);
 
           User.findByIdAndUpdate(user._id, {
-              $push: {
-                savedBooks: savedBook._id
-              }
-            })
+            $push: {
+              savedBooks: savedBook._id,
+            },
+          })
             .then(() => res.redirect("/bookshelf/my-saved-books"))
             .catch((err) => console.log(err));
         })

@@ -2,32 +2,43 @@
 
 <form action="/books/new-book" method="POST" enctype="multipart/form-data">
 
-  <label for="title">Title</label>
-  <input type="text" name="title" required />
+  <label for="title"></label>
+  <input type="text" name="title" placeholder="Title" required />
 
   <br />
-  <label for="authors">Authors</label>
-  <input type="text" name="authors" required />
+  <label for="authors"></label>
+  <input type="text" name="authors" placeholder="Authors" required />
 
   <br />
-  <label for="publishedDate">Published in</label>
-  <input type="text" name="publishedDate" required />
+  <label for="publishedDate"></label>
+  <input
+    type="text"
+    name="publishedDate"
+    placeholder="Publication Year (eg. 1984)"
+    required
+  />
   <br />
-  <label for="description">Description</label>
-  <input type="text" name="description" required />
-  <br />
-
-  <label for="bookPictureUrl">Cover</label>
-  <input type="file" name="bookPictureUrl" id="bookPictureUrl" required />
-  <br />
-
-  <label for="pageCount">Page Count</label>
-  <input type="number" name="pageCount" required />
+  <label for="description"></label>
+  <input type="text" name="description" placeholder="Description" required />
   <br />
 
-  <label for="categories">Genre:</label>
+  <label for="bookPictureUrl">Book cover:</label>
+  <input
+    type="file"
+    name="bookPictureUrl"
+    id="bookPictureUrl"
+    placeholder="Add book cover"
+    required
+  />
+  <br />
+
+  <label for="pageCount"></label>
+  <input type="number" name="pageCount" placeholder="Page Count" required />
+  <br />
+
+  <label for="categories"></label>
   <select name="categories" id="categories" required>
-    <option disable selected value="">Select a genre from the list</option>
+    <option disable selected value="">Select book genre:</option>
     <option value="adventure">Adventure</option>
     <option value="art">Art</option>
     <option value="bio">Biography</option>
@@ -39,7 +50,7 @@
     <option value="history">History</option>
     <option value="horror">Horror</option>
     <option value="liter">Literature</option>
-    <option value="mistery">Mystery</option>
+    <option value="mystery">Mystery</option>
     <option value="poetry">Poetry</option>
     <option value="romance">Romance</option>
     <option value="spiral">Spirality</option>
@@ -47,19 +58,6 @@
     <option value="thriller">Thriller</option>
     <option value="travel">Travel</option>
   </select>
-
-  <label for="maturityRating">Maturity Rating</label>
-  <select name="maturityRating" id="maturityRating" required>
-  <option disable selected value="">Select from the list</option>
-  <option value="newborn">Newborn to age 3</option>
-  <option value=">3">>3</option>
-  <option value=">5">>5</option>
-  <option value=">8">>8</option>
-  <option value=">12">>12</option>
-  <option value=">16">>16</option>
-  <option value=">18">>18</option>
-</select>
-
 
   <br />
   <button type="submit">ADD</button>

@@ -8,7 +8,6 @@ const savedBookSchema = new Schema({
   bookPictureUrl: String,
   pageCount: Number,
   categories: [String],
-  maturityRating: String,
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
