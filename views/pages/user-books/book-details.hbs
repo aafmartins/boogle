@@ -6,14 +6,14 @@
     </div>
 
     <div class="detailsContainer">
-        <h2>Title: {{book.title}}</h2>
-        <h4>Authors: {{book.authors}}</h4>
+        <h2>{{book.title}}</h2>
+        <h4>{{book.authors}}</h4>
 
         <p><b>Description:</b> {{cleanDescription book.description}}</p>
 
         <p><b>Published in:</b> {{book.publishedDate}}</p>
         <p><b>Page count:</b> {{book.pageCount}}</p>
-        <h4><b>Genre:</b></h4>
+        <p><b>Genre:</b></p>
         <ul>
       {{#each book.categories}}
 <li>      {{this}}</li>
