@@ -19,7 +19,7 @@
 </div>
 </div>
 
-<ul>
+<ul class="ulInSavedBook">
   {{#each result}}
     <li>
 <div class="mainContainer">      
@@ -29,8 +29,11 @@
         <h4>{{this.authors}}</h4>
         <h5>{{cleanDescription this.description}}</h5>
 
-        <a class="viewMoreBtn" href="/my-saved-books/{{this._id}}">Read more</a>
-
+        <a class="viewMoreBtn" href="/my-saved-books/{{this._id}}">
+  <button class="navigatingBtn">
+  Read More
+  </button>
+  </a>
       </div>
             <div class="imageContainer">
         <img src="{{this.bookPictureUrl}}" alt=""/>
