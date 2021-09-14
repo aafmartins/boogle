@@ -59,10 +59,7 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
   ) {
     res.render("pages/auth/signup", {
       errorMessage: "Username and password are required",
-<<<<<<< HEAD
-=======
       style: "error.css"
->>>>>>> 451d05e3f0c8af37ecede29d4aec06557b18112e
     });
   }
 
