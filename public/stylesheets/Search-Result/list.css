@@ -1,3 +1,32 @@
-body {
-    background-color: darkgray;
+.results-container {
+  color: #294b53;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 800;
+  text-align: center;
+}
+
+.results-list-container {
+  display: flex;
+}
+
+.results-item-container {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  max-width: 250px;
+  font-size: small;
+}
+
+.title {
+}
+
+.author {
+  font-weight: 500;
 }

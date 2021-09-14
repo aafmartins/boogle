@@ -6,14 +6,22 @@ p {
 h1 {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 800;
+  text-align: center;
 }
 
-form {
-  margin-top: 50px;
+p {
+  margin-bottom: 3px;
+}
+
+.form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+form {
+  margin-top: 8vh;
 }
 
 input {
@@ -25,24 +33,11 @@ input {
   border-radius: 2px;
 }
 
-
-
 .auth-container {
   height: 100vh;
-  display: flex;
-  justify-self: center;
-  flex-direction: column;
   background-image: url("/images/bg.png");
-  background-position: center;
-  width: 100%;
-  background-size: inherit;
-}
-
-.form-container {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-    #E9E8E1;
-  width: fit-content;
-  padding: 10px 15px;
+  background-size: 100vw;
+  background-repeat: no-repeat;
 }
 
 .input-container {
@@ -50,9 +45,13 @@ input {
   color: #ff9c6e;
 }
 
-.login-prompt>a {
+.login-prompt > a {
   color: #ff9c6e;
   text-decoration: none;
+}
+
+.login-prompt > a:hover {
+  font-weight: 800;
 }
 
 .login-prompt {
@@ -62,10 +61,11 @@ input {
 ::placeholder {
   color: rgba(0, 0, 0, 0.25);
 }
-
+.submit-btn-container {
+  text-align: center;
+}
 .submit-btn {
   margin-top: 10px;
-  text-align: center;
   color: white;
   background: #ff9c6e;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
@@ -73,4 +73,11 @@ input {
   border-color: #ff9c6e;
   width: 174px;
   padding: 5px 16px;
+}
+
+.submit-btn:hover {
+  color: #ff9c6e;
+  background: #294b53;
+  border-color: #294b53;
+  transition: ease-in-out;
 }
