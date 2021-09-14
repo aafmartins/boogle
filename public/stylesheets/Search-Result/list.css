@@ -50,14 +50,18 @@
   font-weight: 500;
 }
 
+.ghost{
+  color: transparent;
+}
+
 .description {
   text-align: justify;
+font-kerning: 1px;
 }
 
 .details-link {
   color: #ff9c6e;
   font-weight: 500;
-
   text-decoration: none;
 }
 

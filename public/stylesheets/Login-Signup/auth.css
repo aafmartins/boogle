@@ -25,11 +25,15 @@
 }
 
 .auth-container {
-  height: 100vh;
-  background-image: url("/images/bg.png");
-  background-size: 100vw;
+  /* background-image: url("/images/bg.png");
+  background-size: 100%;
   background-repeat: no-repeat;
+  height: calc(100vh - 150px); */
   color: #294b53;
+}
+
+.background-img{
+ width: 100vw;
 }
 
 .input-container {

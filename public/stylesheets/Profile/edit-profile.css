@@ -44,7 +44,7 @@ select {
 }
 
 form {
-    margin-top: 50px;
+    margin: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,7 +57,7 @@ h1 {
     font-family: "Nunito Sans", sans-serif;
     font-weight: 800;
     text-align: center;
-    margin: 20px;
+    margin: 50px;
 }
 
 label {
@@ -65,4 +65,34 @@ label {
     margin-bottom: 0;
     padding-bottom: 0;
 
+}
+
+
+
+
+label.myLabel input[type="file"] {
+    position:absolute;
+    top: -1000px;
+}
+
+/***** Example custom styling *****/
+.myLabel {
+    border: 2px solid #AAA;
+    border-radius: 4px;
+    padding: 7px 25px;
+    margin: 10px;
+    background: #DDD;
+    display: inline-block;
+}
+.myLabel:hover {
+    background: #CCC;
+}
+.myLabel:active {
+    background: #CCF;
+}
+.myLabel :invalid + span {
+    color: #A44;
+}
+.myLabel :valid + span {
+    color: #294B53;
 }

@@ -13,6 +13,7 @@
 
      
         {{#each books.data.items}}
+        {{#if this.volumeInfo.authors}}
  <div class="results-item-container">
           <li>
 
@@ -26,17 +27,17 @@
 
           
               {{#each this.volumeInfo.authors}}
-                <div class="author">
-                <p>{{this}}</p>
-               </div>
+                <span class="author">
+                <span>{{this}}</span> <span class="ghost">_</span>
+               </span>
               {{/each}}
-       
 
-            <div class="description">
-              {{#if this.volumeInfo.description}}
-                <p> {{splitUrl this.volumeInfo.description}}</p>
+            {{#if this.volumeInfo.description}}
+              <div class="description">
+                <p> {{splitUrl this.volumeInfo.description}}</p>         
+              </div>
               {{/if}}
-            </div>
+
              <div class="details-link-container">
                <a class="details-link" href="/search/{{this.id}}">Log in to view more details!</a>
              </div>
@@ -44,7 +45,7 @@
  </div>
           </li>
 
-         
+         {{/if}}
         {{/each}}
      
     </ul>

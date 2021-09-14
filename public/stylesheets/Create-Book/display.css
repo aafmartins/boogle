@@ -51,3 +51,31 @@ h1 {
     text-align: center;
     margin: 20px;
 }
+
+
+label.myLabel input[type="file"] {
+    position:absolute;
+    top: -1000px;
+}
+
+/***** Example custom styling *****/
+.myLabel {
+    border: 2px solid #AAA;
+    border-radius: 4px;
+    padding: 7px 25px;
+    margin: 4px 7px 7px 7px;
+    background: #DDD;
+    display: inline-block;
+}
+.myLabel:hover {
+    background: #CCC;
+}
+.myLabel:active {
+    background: #CCF;
+}
+.myLabel :invalid + span {
+    /* color: #A44; */
+}
+.myLabel :valid + span {
+    color: #294B53;
+}
