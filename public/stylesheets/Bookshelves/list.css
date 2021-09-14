@@ -66,7 +66,7 @@ h5 {
     align-items: center;
     padding: 8px 16px;
     position: static;
-    width: 109px;
+    width: 149px;
     height: 40px;
     left: 0px;
     top: 0px;
@@ -122,6 +122,10 @@ h1 {
     margin-bottom: 40px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .navigatingBtn {
     display: flex;
     flex-direction: column;
@@ -129,7 +133,7 @@ h1 {
     align-items: center;
     padding: 8px 16px;
     position: static;
-    width: 160px;
+    width: 170px;
     height: 40px;
     left: 0px;
     top: 0px;
@@ -141,11 +145,11 @@ h1 {
     flex: none;
     flex-grow: 0;
     margin: 16px 0px;
-    font-family: Roboto;
+    /* font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 24px; */
     text-align: center;
     color: #FFFFFF;
 

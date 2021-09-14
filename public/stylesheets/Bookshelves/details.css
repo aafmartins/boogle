@@ -19,6 +19,9 @@ img {
 
 }
 
+a {
+    text-decoration: none;
+}
 
 .imageContainer {
     display: flex;
@@ -69,11 +72,17 @@ img {
     margin: 10px;
 }
 
+.routeBtn :hover {
+    color: white;
+}
+
 
 h2 {
-    font-size: 30px;
-    line-height: 40px;
-    flex: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+    /* font-size: 30px; */
+    /* line-height: 40px; */
+    /* flex: none; */
 }
 
 h4 {

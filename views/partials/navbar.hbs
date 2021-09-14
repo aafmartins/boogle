@@ -1,1 +1,73 @@
-<h1>Navbar</h1>
+{{!-- <h1>Navbar</h1> --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbarContainer">
+  <div>
+      <a class="navbar-brand" href="/">Home</a>
+  </div>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarText">
+   
+<div> <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+        <a class="nav-link" href="/books/new-book"><button class="navbarBtn" >
+    Create New Book
+</button>
+</a>
+      </li>
+</div>
+
+<div>
+          <li class="nav-item active">
+        <img id="boogleLogo" src="/images/Logo-Item-Medium.png" alt="">
+      </li>
+</div>
+<div id="nav-links">
+          <li class="nav-item">
+        <a class="nav-link" href="/bookshelf/my-saved-books"><button class="navbarBtn" >
+    My Books
+</button>
+</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/profile">
+        <button class="navbarBtn" >
+    Profile
+</button>
+</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/auth/login"><button class="navbarBtn" >
+    Login
+</button>
+</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/auth/signup"><button class="navbarBtn" >
+    Sign Up
+</button>
+</a>
+      </li>
+      </ul>
+</div>
+
+
+  </div>
+
+
+</nav>
+
+
+          {{!-- {{#unless currentUser}}
+        <a href="/auth/signup">Signup</a>
+        <a href="/auth/login">Login</a>
+      {{/unless}} --}}
+      {{!-- <a href="/users/profile">Profile</a> --}}
+      {{!-- <a href="/">Home</a> --}}
+      {{!-- <a href="/books/new-book">Create New Book</a>
+      <a href="/bookshelf/my-created-books">My Created Books</a>
+      <a href="/bookshelf/my-saved-books">My Saved Books</a> --}}

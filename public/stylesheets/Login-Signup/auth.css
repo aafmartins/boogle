@@ -42,7 +42,7 @@ input {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
     #E9E8E1;
   width: fit-content;
-  padding: 10px 15px;
+  padding: 10;
 }
 
 .input-container {
