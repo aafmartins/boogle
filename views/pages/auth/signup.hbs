@@ -1,16 +1,68 @@
-<form action="/auth/signup" method="POST" >
-  <label for="username">Username: </label>
-  <input type="text" name="username" minlength="3" maxlength="10" required />
+<div class="auth-container">
 
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email" required />
+  <div class="form-container">
 
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password" required />
+    <form action="/auth/signup" method="POST">
 
-  <button type="submit">Submit</button>
-</form>
+      <div class="heading">
+        <h1>Sign Up</h1>
+      </div>
 
-{{#if errorMessage}}
-  <p>{{errorMessage}}</p>
-{{/if}}
+      <div class="input-container">
+        <div><label for="username">Username: </label></div>
+        <div>
+          <input
+            type="text"
+            name="username"
+            minlength="3"
+            maxlength="10"
+            placeholder="Your username"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="input-container">
+        <div><label for="email">Email:</label></div>
+        <div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="your_email@boogle.com"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="input-container">
+        <div><label for="password">Password:</label></div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Choose your password"
+            required
+          />
+        </div>
+      </div>
+
+      <div><button class="submit-btn" type="submit">Submit</button></div>
+
+      <div class="input-container login-prompt">
+        <p>Already have an account?</p>
+        <a href="/auth/login">Log in here!</a>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="error-container">
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+  </div>
+
+</div>
