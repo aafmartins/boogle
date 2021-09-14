@@ -18,12 +18,12 @@ body {
   font-size: 16px;
 }
 
-/* a {
+a {
   color: #00B7FF;
 
 }
 
-.footer-container{
+.footer-container {
   display: flex;
   display: flex;
   flex-direction: row;
@@ -50,7 +50,7 @@ body {
   margin-top: 10px;
 }
 
-.imageFooter{
+.imageFooter {
   width: 100px;
   height: 100px;
   margin-top: 50px;
