@@ -12,29 +12,34 @@ Secondary/Volcano/1: #FFF2E8; (light salmon)
 
 
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
 
-a {
+/* a {
   color: #00B7FF;
+} */
+
+.navbar-brand {
+  margin-left: 15px;
 }
 
 /* #navbarContainer {
   display: flex;
   height: 80px;
 } */
-.navbar {
+#navbarContainer {
   height: 60px;
 }
 
 #boogleLogo {
   height: 50px;
+  margin-left: 100px;
 }
 
-.navbar-collapse {
+#navbarText {
   justify-content: space-between;
   list-style-type: none;
   color: #294B53;
@@ -68,5 +73,15 @@ a:hover {
   line-height: 24px;
   text-align: center;
   color: #FFFFFF;
-  margin: 10px;
+  /* margin: 10px; */
+}
+
+#button {
+  margin: 0px 10px 0px 0px;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #294B53;
 }

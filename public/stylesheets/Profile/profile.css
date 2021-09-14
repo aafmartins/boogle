@@ -1,3 +1,6 @@
 body {
-    background-color: brown;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+        #E9E8E1;
+    margin: 0;
+    padding: 0;
 }
