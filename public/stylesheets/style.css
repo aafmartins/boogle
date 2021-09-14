@@ -10,20 +10,17 @@ Primary/Volcano/4: #FF9C6E; (dark salmon)
 Secondary/Volcano/1: #FFF2E8; (light salmon)
 */
 
-
 body {
-  /* padding: 50px; */
   font: 14px "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
 
 a {
-  color: #00B7FF;
-
+  color: #00b7ff;
 }
 
-.footer-container{
+.footer-container {
   display: flex;
   display: flex;
   flex-direction: row;
@@ -31,7 +28,7 @@ a {
   align-content: stretch;
   justify-content: space-around;
   align-items: stretch;
-  background-color: #294B53;
+  background-color: #294b53;
   padding-bottom: 0px;
 }
 
@@ -50,13 +47,11 @@ a {
   margin-top: 10px;
 }
 
-.imageFooter{
+.imageFooter {
   width: 100px;
   height: 100px;
   margin-top: 50px;
 }
-
-
 
 .navbar-brand {
   margin-left: 15px;
@@ -79,7 +74,7 @@ a {
 #navbarText {
   justify-content: space-between;
   list-style-type: none;
-  color: #294B53;
+  color: #294b53;
 }
 
 #nav-links {
@@ -101,15 +96,15 @@ a:hover {
   height: 40px;
   /* left: 84px;
     top: 16px; */
-  background: #294B53;
-  border: 1px solid #1890FF;
+  background: #294b53;
+  border: 1px solid #1890ff;
   box-sizing: border-box;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
   border-radius: 2px;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   /* margin: 10px; */
 }
 
@@ -119,6 +114,6 @@ a:hover {
 }
 
 h1 {
-  font-family: 'Nunito Sans', sans-serif;
-  color: #294B53;
+  font-family: "Nunito Sans", sans-serif;
+  color: #294b53;
 }
