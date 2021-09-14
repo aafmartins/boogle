@@ -85,9 +85,14 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
 router.get("/profile", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
     User.findById(req.session.currentUser._id).then((user) => {
+      let pictureUrl = user.avatarUrl
+      if(!user.avatarUrl){
+        pictureUrl = "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png"
+      }
       console.log("The user:", user);
       res.render("pages/user/profile", {
         user,
+        pictureUrl,
         style: "Profile/profile.css"
       });
     });

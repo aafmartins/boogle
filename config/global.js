@@ -39,11 +39,17 @@ module.exports = (app) => {
       return string.split(/\s+/).slice(0, 20).join(" ") + "...";
     }
   });
+  hbs.registerHelper("splitDescription", function (string) {
+    if (string) {
+      return string.split(/\s+/).slice(0, 100).join(" ") + "...";
+    }
+  });
   hbs.registerHelper("cleanDescription", function (string) {
     if (string) {
       return string.replaceAll(/<.{0,2}>/g, '')
     }
   });
+
   // Handles access to the public folder
   app.use(express.static(path.join(__dirname, "..", "public")));
 
