@@ -1,3 +1,53 @@
 body {
-    background-color: lightsalmon;
+    background-color: #FFFFFF;
+    color: #294B53;
+}
+
+img {
+    height: 250px;
+}
+
+
+.submit-btn {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    background: #ff9c6e;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    border-radius: 2px;
+    border-color: #ff9c6e;
+    width: 174px;
+    padding: 5px 16px;
+}
+
+::placeholder,
+select {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+input,
+select {
+    margin-top: 10px;
+    width: 286px;
+    padding: 8px 12px;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #294b53;
+
+}
+
+h1 {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 800;
+    text-align: center;
+    margin: 20px;
 }
