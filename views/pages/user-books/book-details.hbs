@@ -1,47 +1,44 @@
-
 <div class="mainContainer">
 
-    <div class="imageContainer">
-        <img src="{{book.bookPictureUrl}}" />
-    </div>
+  <div class="imageContainer">
+    <img src="{{book.bookPictureUrl}}" />
+  </div>
 
-    <div class="detailsContainer">
-        <h2>{{book.title}}</h2>
-        <h4>{{book.authors}}</h4>
+  <div class="detailsContainer">
+    <h2>{{book.title}}</h2>
+    <h4>{{book.authors}}</h4>
 
-        <p><b>Description:</b> {{cleanDescription book.description}}</p>
+    <p><b>Description:</b> {{book.description}}</p>
 
-        <p><b>Published in:</b> {{book.publishedDate}}</p>
-        <p><b>Page count:</b> {{book.pageCount}}</p>
-        <p><b>Genre:</b></p>
-        <ul>
+    <p><b>Published in:</b> {{book.publishedDate}}</p>
+    <p><b>Page count:</b> {{book.pageCount}}</p>
+    <p><b>Genre:</b></p>
+    <ul>
       {{#each book.categories}}
-<li>      {{this}}</li>
+        <li> {{this}}</li>
       {{/each}}
-      </ul>
-    </div>
+    </ul>
+  </div>
 
-    <div class="linksContainer">
+  <div class="linksContainer">
 
+    <a href="/books/{{book._id}}/edit">
+      <button class="routeBtn">
+        Edit
+      </button>
+    </a>
 
+    <a href="/books/{{book._id}}/delete">
+      <button class="routeBtn">
+        Delete
+      </button>
+    </a>
 
-<a href="/books/{{book._id}}/edit">
-<button class="routeBtn" >
-    Edit
-</button>
-</a>
-
-<a href="/books/{{book._id}}/delete">
-<button class="routeBtn" >
-    Delete
-</button>
-</a>
-
-<a href="/bookshelf/my-created-books">
-<button class="routeBtn" >
-    Back
-</button>
-</a>
-    </div>
+    <a href="/bookshelf/my-created-books">
+      <button class="routeBtn">
+        Back
+      </button>
+    </a>
+  </div>
 
 </div>

@@ -1,6 +1,6 @@
 .results-container {
   color: #294b53;
-  margin: 8vh 0;
+
   line-height: 1.5;
 }
 
@@ -8,7 +8,7 @@
   font-family: "Nunito Sans", sans-serif;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 8vh;
+  padding: 30px 0;
   background-color: #fff2e8;
   width: inherit;
 }
@@ -19,6 +19,7 @@
 }
 
 .results-list-container {
+  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -30,11 +31,16 @@
   flex-direction: column;
   justify-content: flex-end;
   list-style: none;
-  width: 250px;
+  width: 300px;
   height: 400px;
   font-size: small;
   margin: 20px;
-  background-color: #e5e5e5;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    #e9e8e1;
   padding: 15px;
 }
 
@@ -50,24 +56,31 @@
   font-weight: 500;
 }
 
-.ghost{
+.ghost {
   color: transparent;
 }
 
 .description {
   text-align: justify;
-font-kerning: 1px;
+  font-kerning: 1px;
 }
 
 .details-link {
-  color: #ff9c6e;
-  font-weight: 500;
-  text-decoration: none;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  background: #ff9c6e;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 2px;
+  border-color: #ff9c6e;
+  width: 100px;
+  padding: 5px 16px;
 }
 
 .details-link:hover {
-  font-weight: 800;
-  color: #ff9c6e;
+  background: #294b53;
+  border-color: #294b53;
+  transition: ease-in-out;
 }
 
 .details-link-container {

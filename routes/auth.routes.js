@@ -14,16 +14,12 @@ const fileUploader = require("../config/cloudinary");
 //2 - Create 5 routes: 2 for login, 2 for signup and 1 for logout
 router.get("/signup", isNotLoggedIn, (req, res) => {
   res.render("pages/auth/signup", {
-    style: "Login-Signup/auth.css"
+    style: "Login-Signup/auth.css",
   });
 });
 
 router.post("/signup", (req, res, next) => {
-  const {
-    username,
-    email,
-    password
-  } = req.body;
+  const { username, email, password } = req.body;
 
   if (
     !username ||
@@ -36,18 +32,18 @@ router.post("/signup", (req, res, next) => {
   ) {
     res.render("pages/auth/signup", {
       errorMessage: "Username and password are required",
-      style: "error.css"
+      style: "Login-Signup/auth.css",
     });
   }
 
   User.findOne({
-      username,
-    })
+    username,
+  })
     .then((user) => {
       if (user) {
         res.render("pages/auth/signup", {
           errorMessage: "User already exists",
-          style: "error.css"
+          style: "Login-Signup/auth.css",
         });
       }
 
@@ -55,14 +51,14 @@ router.post("/signup", (req, res, next) => {
       const hashPassword = bcrypt.hashSync(password, salt);
 
       User.create({
-          username,
-          email,
-          password: hashPassword,
-        })
+        username,
+        email,
+        password: hashPassword,
+      })
         .then(() => {
           User.findOne({
-              username: username
-            })
+            username: username,
+          })
             .then((user) => {
               req.session.currentUser = user;
               if (user) {
@@ -74,7 +70,7 @@ router.post("/signup", (req, res, next) => {
         .catch((error) =>
           res.render("pages/auth/signup", {
             errorMessage: error,
-            style: "error.css"
+            style: "Login-Signup/auth.css",
           })
         );
     })
@@ -83,33 +79,30 @@ router.post("/signup", (req, res, next) => {
 
 router.get("/login", isNotLoggedIn, (req, res) => {
   res.render("pages/auth/login", {
-    style: "Login-Signup/auth.css"
+    style: "Login-Signup/auth.css",
   });
 });
 
 router.post("/login", (req, res) => {
   //GET VALUES FROM FORM
-  const {
-    username,
-    password
-  } = req.body;
+  const { username, password } = req.body;
 
   //VALIDATE INPUT
   if (!username || username === "" || !password || password === "") {
     res.render("pages/auth/signup", {
       errorMessage: "Something went wrong",
-      style: "error.css"
+      style: "Login-Signup/auth.css",
     });
   }
 
   User.findOne({
-      username,
-    })
+    username,
+  })
     .then((user) => {
       if (!user) {
         res.render("pages/auth/login", {
-          errorMessage: "Input invalid",
-          style: "error.css"
+          errorMessage: "Input invalid, please try again or sign up 🤓",
+          style: "Login-Signup/auth.css",
         });
       } else {
         const encryptedPassword = user.password;
@@ -120,8 +113,8 @@ router.post("/login", (req, res) => {
           res.redirect("/users/profile");
         } else {
           res.render("pages/auth/login", {
-            errorMessage: "Input invalid",
-            style: "error.css"
+            errorMessage: "Input invalid, please try again or sign up 🤓",
+            style: "Login-Signup/auth.css",
           });
         }
       }
@@ -134,8 +127,8 @@ router.get("/logout", (req, res) => {
     console.log(req.session);
     if (err) {
       res.render("error", {
-        message: "Something went wrong! Yikes!",
-        style: "error.css"
+        errorMessage: "Something went wrong! Yikes!",
+        style: "Login-Signup/auth.css",
       });
     } else {
       res.redirect("/");

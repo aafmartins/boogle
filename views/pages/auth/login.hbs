@@ -1,5 +1,11 @@
 <div class="auth-container">
 
+  <div class="error-container">
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+  </div>
+
   <div class="form-container">
 
     <form action="/auth/login" method="POST">
@@ -51,14 +57,8 @@
 
   </div>
 
-  <div>
+  {{! <div>
       <img class="background-img" src="/images/bg.png" alt="background image">
-  </div>
-
-  <div class="error-container">
-    {{#if errorMessage}}
-      <p>{{errorMessage}}</p>
-    {{/if}}
-  </div>
+  </div> }}
 
 </div>
