@@ -20,7 +20,43 @@ body {
 
 /* a {
   color: #00B7FF;
-} */
+
+}
+
+.footer-container{
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-around;
+  align-items: stretch;
+  background-color: #294B53;
+  padding-bottom: 0px;
+}
+
+.H2Footer {
+  font-size: 20px;
+  line-height: 28px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.pFooter {
+  color: white;
+  font-style: normal;
+  margin-top: 10px;
+}
+
+.imageFooter{
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+}
+
+
 
 .navbar-brand {
   margin-left: 15px;
