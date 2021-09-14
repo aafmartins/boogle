@@ -6,7 +6,7 @@ router.get("/:id/delete", (req, res) => {
   const id = req.params.id;
   SavedBook.findByIdAndDelete(id)
     .then(() => {
-      res.redirect("/my-saved-books");
+      res.redirect("/bookshelf/my-saved-books");
     })
     .catch((err) => console.log(err));
 });

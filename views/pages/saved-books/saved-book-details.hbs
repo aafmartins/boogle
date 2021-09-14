@@ -1,16 +1,31 @@
-<h2>Book details</h2>
 
-<h3>Title: {{book.title}}</h3>
-<p>Authors: {{book.authors}}</p>
-<p>Published in: {{book.publishedDate}}</p>
-<p>Page count: {{book.pageCount}}</p>
+<div class="mainContainer">
 
-<h4>Genre: {{book.categories}}</h4>
-<p>Description: {{book.description}}</p>
+    <div class="imageContainer">
+        <img src="{{book.bookPictureUrl}}" />
+    </div>
 
-<img src="{{book.bookPictureUrl}}" />
+    <div class="detailsContainer">
+        <h2>Title: {{book.title}}</h2>
+        <h4>Authors: {{book.authors}}</h4>
 
-<br />
-<a href="/my-saved-books/{{book._id}}/delete">Delete</a>
-<br />
-<a href="/bookshelf/my-saved-books">Back to My Bookshelf</a>
+        <p><b>Description:</b> {{cleanDescription book.description}}</p>
+
+        <p><b>Published in:</b> {{book.publishedDate}}</p>
+        <p><b>Page count:</b> {{book.pageCount}}</p>
+        <h4><b>Genre:</b></h4>
+        <ul>
+      {{#each book.categories}}
+        <li>      
+            {{this}}
+        </li>
+      {{/each}}
+      </ul>
+    </div>
+
+    <div class="linksContainer">
+        <a class="routeBtn" href="/my-saved-books/{{book._id}}/delete">Delete</a>
+        <a class="routeBtn" href="/bookshelf/my-saved-books">Back</a>
+    </div>
+
+</div>

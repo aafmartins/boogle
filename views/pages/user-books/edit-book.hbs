@@ -1,27 +1,51 @@
 <h2>Edit Book</h2>
+<div class="formContainer form-style-5">
+
 
 <form action="/books/{{book._id}}/edit" method="POST">
+<div class="formInputs">
+
+<button class="routBtn" href="/books/{{this._id}}" type="menu">Go Back</button>
+
+<div >
 
   <label for="title">Title</label>
   <input type="text" name="title" value="{{book.title}}" />
-  <br />
-  <label for="authors">Author</label>
+
+
+</div>
+
+<div>
+    <label for="authors">Author</label>
   <input type="text" name="authors" value="{{book.authors}}" />
-  <br />
+
+</div>
+
+
+<div>  
   <label for="publishedDate">Published date</label>
   <input type="text" name="publishedDate" value="{{book.publishedDate}}" />
-  <br />
+</div>
+
+
+<div>  
   <label for="description">Description</label>
   <input type="text" name="description" value="{{book.description}}" />
-  <br />
+</div>
+
+<div>
 
   <label for="pageCount">Page count</label>
   <input type="number" name="pageCount" value="{{book.pageCount}}" />
-  <br />
 
-  <label for="categories">Genre:</label>
+</div>
+
+
+<div>
+
+    <label for="categories">Genre:</label>
   <select name="categories" id="categories" required>
-    <option disable selected value="">{{book.categories}}</option>
+    <option disable selected value="{{book.categories}}">{{book.categories}}</option>
     <option value="adventure">Adventure</option>
     <option value="art">Art</option>
     <option value="bio">Biography</option>
@@ -41,7 +65,12 @@
     <option value="thriller">Thriller</option>
     <option value="travel">Travel</option>
   </select>
-  <br />
-  <button type="submit">Save</button>
+</div>
+
+</div>
+
+
+  <button class="routBtn" type="submit">Edit book</button>
 
 </form>
+</div>
