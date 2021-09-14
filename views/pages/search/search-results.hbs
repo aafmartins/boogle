@@ -1,16 +1,19 @@
-<div class="results-container">
 
-  <div class="heading">
+<div class="results-container">
+  <div class="search-result-heading">
+  <div>
+    <img class="headerImage" src="/images/reading.png" alt="">
+  </div>
+
     <h1>Top results for your search</h1>
   </div>
 
-  <div class="results-list-container">
 
-    <ul>
+    <ul class="results-list-container">
 
-      <div class="results-item-container">
+     
         {{#each books.data.items}}
-
+ <div class="results-item-container">
           <li>
 
             <div class="cover-img">
@@ -21,24 +24,29 @@
               <h5>{{this.volumeInfo.title}}</h5>
             </div>
 
-            <div class="author">
+          
               {{#each this.volumeInfo.authors}}
+                <div class="author">
                 <p>{{this}}</p>
+               </div>
               {{/each}}
-            </div>
+       
 
             <div class="description">
               {{#if this.volumeInfo.description}}
                 <p> {{splitUrl this.volumeInfo.description}}</p>
               {{/if}}
             </div>
+             <div class="details-link-container">
+               <a class="details-link" href="/search/{{this.id}}">Log in to view more details!</a>
+             </div>
 
+ </div>
           </li>
 
-          <div class="details-link"><a href="/search/{{this.id}}">View details</a></div>
-
+         
         {{/each}}
-      </div>
+     
     </ul>
-  </div>
+
 </div>

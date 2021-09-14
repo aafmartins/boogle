@@ -1,16 +1,7 @@
-h1,
-p {
-  color: #294b53;
-}
-
-h1 {
+.auth-heading {
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 800;
+  font-weight: bold;
   text-align: center;
-}
-
-p {
-  margin-bottom: 3px;
 }
 
 .form-container {
@@ -20,11 +11,11 @@ p {
   align-items: center;
 }
 
-form {
+.form-container form {
   margin-top: 8vh;
 }
 
-input {
+.input-container input {
   margin-top: 10px;
   width: 286px;
   padding: 8px 12px;
@@ -38,24 +29,34 @@ input {
   background-image: url("/images/bg.png");
   background-size: 100vw;
   background-repeat: no-repeat;
+  color: #294b53;
 }
 
 .input-container {
-  margin: 20px 0;
+  margin: 25px 0;
   color: #ff9c6e;
 }
 
-.login-prompt > a {
+.login-prompt a,
+.signup-prompt a {
   color: #ff9c6e;
   text-decoration: none;
 }
 
-.login-prompt > a:hover {
+.login-prompt p,
+.signup-prompt p {
+  margin-bottom: 3px;
+}
+
+.login-prompt a:hover,
+.signup-prompt a:hover {
   font-weight: 800;
 }
 
-.login-prompt {
+.login-prompt,
+.signup-prompt {
   text-align: center;
+  color: #294b53;
 }
 
 ::placeholder {

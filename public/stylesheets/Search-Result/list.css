@@ -1,32 +1,71 @@
 .results-container {
   color: #294b53;
+  margin: 8vh 0;
+  line-height: 1.5;
 }
 
-p {
-  margin: 0;
-}
-
-h1 {
+.search-result-heading {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 800;
   text-align: center;
+  margin-bottom: 8vh;
+  background-color: #fff2e8;
+  width: inherit;
+}
+
+.headerImage {
+  padding: 30px;
+  height: 250px;
 }
 
 .results-list-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
 }
 
 .results-item-container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   list-style: none;
-  max-width: 250px;
+  width: 250px;
+  height: 400px;
   font-size: small;
+  margin: 20px;
+  background-color: #e5e5e5;
+  padding: 15px;
 }
 
-.title {
+.cover-img {
+  margin-bottom: 20px;
+}
+
+.cover-img img {
+  height: 150px;
 }
 
 .author {
   font-weight: 500;
+}
+
+.description {
+  text-align: justify;
+}
+
+.details-link {
+  color: #ff9c6e;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.details-link:hover {
+  font-weight: 800;
+  color: #ff9c6e;
+}
+
+.details-link-container {
+  margin-top: 10px;
 }
