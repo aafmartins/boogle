@@ -3,7 +3,7 @@ Fonts:
 font-family: 'Nunito Sans', sans-serif; 
 font-family: 'Roboto', sans-serif;
 
-Colors:
+colors:
 Brand / Dark Petrol: #294B53;
 Secondary/Warm grey 40% or 60%: #E9E8E1;
 Primary/Volcano/4: #FF9C6E; (dark salmon)
@@ -18,4 +18,101 @@ body {
 
 a {
   color: #00b7ff;
+}
+
+.footer-container {
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-around;
+  align-items: stretch;
+  background-color: #294b53;
+  padding-bottom: 0px;
+}
+
+.H2Footer {
+  font-size: 20px;
+  line-height: 28px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.pFooter {
+  color: white;
+  font-style: normal;
+  margin-top: 10px;
+}
+
+.imageFooter {
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+}
+
+.navbar-brand {
+  margin-left: 15px;
+}
+
+/* #navbarContainer {
+  display: flex;
+  height: 80px;
+} */
+#navbarContainer {
+  height: 60px;
+}
+
+#boogleLogo {
+  height: 50px;
+  margin-left: 100px;
+}
+
+#navbarText {
+  justify-content: space-between;
+  list-style-type: none;
+  color: #294b53;
+}
+
+#nav-links {
+  display: flex;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.navbarBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  /* position: static; */
+  width: auto;
+  height: 40px;
+  /* left: 84px;
+    top: 16px; */
+  background: #294b53;
+  border: 1px solid #1890ff;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 2px;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  /* margin: 10px; */
+}
+
+#button {
+  margin: 0px 10px 0px 0px;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Nunito Sans", sans-serif;
+  color: #294b53;
 }

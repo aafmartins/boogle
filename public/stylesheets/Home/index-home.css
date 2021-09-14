@@ -52,10 +52,12 @@ body {
     border-radius: 2px;
     color: white;
     text-transform: uppercase;
+    margin-left: 20px;
 }
 
 .mainFormContainer {
     width: inherit;
+    margin-top: 50px;
 }
 
 .formInputsContainer {
@@ -101,56 +103,53 @@ select {
     color: rgba(0, 0, 0, 0.25);
 }
 
-.Newsletter {
+.Signup-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 64px 16px;
-    position: absolute;
-    width: 1171px;
-    height: 400px;
-    left: 135px;
-    top: 900px;
+    align-content: center;
+    width: inherit;
+    height: 500px;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), #E9E8E1;
 }
 
-.Newsletter-image {
-    position: absolute;
-    left: 13.71%;
-    right: 58.11%;
-    top: 12.52%;
-    bottom: 12.52%;
+.Signup-image {
+    position: static;
+    box-sizing: border-box;
+    padding-right: 150px;
 }
 
-.H1-Newsletter {
-    position: static;
-    width: 480px;
-    left: calc(50% - 480px/2);
-    top: 9.64%;
-    bottom: 62.65%;
-    font-family: Roboto;
+
+.H1-Signup {
     font-style: normal;
     font-weight: 500;
     font-size: 38px;
     line-height: 46px;
-    display: flex;
     align-items: center;
     color: #294B53;
+    margin-top: 10px;
 }
 
-.H5-Newsletter {
-    position: static;
-    width: 480px;
-    left: calc(50% - 480px/2);
-    top: 42.17%;
-    bottom: 49.4%;
-    font-family: Roboto;
+.H5-Signup {
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 28px;
-    display: flex;
     align-items: center;
     color: #FF9C6E;
+    margin-top: 30px;
+}
+
+.Signup-button {
+    padding: 16px;
+    bottom: 5.1%;
+    background: #FF9C6E;
+    border: 1px solid #FF9C6E;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    border-radius: 2px;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 30px;
 }
