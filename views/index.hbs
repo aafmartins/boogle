@@ -1,3 +1,4 @@
+<!---
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
@@ -33,4 +34,59 @@
   </select>
 
   <button type="submit">Search</button>
-</form>
+</form>  -->
+
+<!---Header-->
+<header>
+  <div class="Hero">
+    <h1 class="H1-hero">Browse books & create your own personal library</h1>
+    <button class="Hero-button">Create your Account</button>
+    <img class="Hero-image" src="images/Hero-Image.png" alt="Hero-Image">
+  </div>
+</header>
+
+
+<!---Search bar-->
+  <div class="Search-bar">
+    <form action="/search/book-search" method="GET"></form>
+      <label for="author">Search by Author:</label>
+      <input type="text" name="author" placeholder="Author" id="author"/>
+
+      <label for="title">Search by Title: </label>
+      <input type="text" name="title" placeholder="Book title"/>
+
+      <label for="generic">Search Generic:</label>
+      <input type="text" name="generic" placeholder="Generic" id="generic"/>
+
+  <label for="genre">Pick by Genre:</label>
+  <select name="genre" id="genre">
+      <option disable selected value="">Select a genre from the list</option>
+      <option value="adventure">Adventure</option>
+      <option value="art">Art</option>
+      <option value="bio">Biography</option>
+      <option value="children">Children</option>
+      <option value="crime">Crime</option>
+      <option value="drama">Drama</option>
+      <option value="fiction">Fiction</option>
+      <option value="history">History</option>
+      <option value="horror">Horror</option>
+      <option value="liter">Literature</option>
+      <option value="poetry">Poetry</option>
+      <option value="romance">Romance</option>
+      <option value="stor">Stories</option>
+      <option value="thriller">Thriller</option>
+      <option value="travel">Travel</option>
+  </select>
+  <button type="submit">Search</button>
+  </form> 
+  </div>
+
+  <!---Newsletter-->
+    <div class="Newsletter">
+    <img class="Newsletter-image" src="images/reading.png" alt="Newsletter-Image">
+    <h1 class="H1-Newsletter">The books you want to read?</h1>
+    <h5 class="H5-Newsletter">Join for free to save your favorite books!</h5>
+    <button class="Hero-button">Create your Account</button>
+    </div>
+  </section>
+</section>
