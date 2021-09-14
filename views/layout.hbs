@@ -7,7 +7,7 @@
   </head>
   <body>
     <nav>
-      {{!-- {{>navbar}} --}}
+      {{>navbar}}
       {{#unless currentUser}}
         <a href="/auth/signup">Signup</a>
         <a href="/auth/login">Login</a>
@@ -19,6 +19,6 @@
       <a href="/bookshelf/my-saved-books">My Saved Books</a>
     </nav>
     {{{body}}}
-    {{!-- {{> footer}} --}}
+    {{> footer}}
   </body>
 </html>
