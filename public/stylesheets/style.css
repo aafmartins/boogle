@@ -1,5 +1,9 @@
-/* 
-colors:
+/*
+Fonts:
+font-family: 'Nunito Sans', sans-serif; 
+font-family: 'Roboto', sans-serif;
+
+Colors:
 Brand / Dark Petrol: #294B53;
 Secondary/Warm grey 40% or 60%: #E9E8E1;
 Primary/Volcano/4: #FF9C6E; (dark salmon)
@@ -7,17 +11,12 @@ Secondary/Volcano/1: #FFF2E8; (light salmon)
 */
 
 
-* {
-  font-family: 'Roboto';
-}
-
-
-
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
-
 
 a {
   color: #00B7FF;
