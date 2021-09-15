@@ -9,6 +9,8 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    padding-top: 80px;
+    padding-bottom: 30px;;
 }
 
 .hero-left-part {
@@ -27,7 +29,6 @@ body {
     font-weight: 800;
     font-size: 64px;
     line-height: 72px;
-
 }
 
 .Hero-button {
@@ -42,6 +43,13 @@ body {
     text-transform: uppercase;
 }
 
+.Hero-button:hover {
+    color: #ff9c6e;
+    background: #294b53;
+    border-color: #294b53;
+    transition: ease-in-out;
+}
+
 .search-btn {
     padding: 8px 12px;
     bottom: 5.1%;
@@ -52,12 +60,22 @@ body {
     border-radius: 2px;
     color: white;
     text-transform: uppercase;
+    text-align: center;
     margin-left: 20px;
+    padding-left; 50px;
+    padding-right: 50px;
+}
+
+.Search-btn:hover{
+    color: #294b53;;
+    background: #E9967A;
+    border-color: #294b53;
+    transition: ease-in-out;
 }
 
 .mainFormContainer {
     width: inherit;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .formInputsContainer {
@@ -67,6 +85,8 @@ body {
     background-color: #294B53;
     color: white;
     padding: 15px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
 
 }
 
@@ -112,6 +132,7 @@ select {
     width: inherit;
     height: 500px;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), #E9E8E1;
+    margin-top: 0px;
 }
 
 .Signup-image {
@@ -152,4 +173,11 @@ select {
     color: white;
     text-transform: uppercase;
     margin-top: 30px;
+}
+
+.Signup-button:hover {
+    color: #ff9c6e;
+    background: #294b53;
+    border-color: #294b53;
+    transition: ease-in-out;
 }

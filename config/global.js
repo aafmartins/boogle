@@ -46,7 +46,7 @@ module.exports = (app) => {
   });
   hbs.registerHelper("cleanDescription", function (string) {
     if (string) {
-      return string.replaceAll(/<.{0,2}>/g, '')
+      return string.replace(/<.{0,2}>/g, "");
     }
   });
 
