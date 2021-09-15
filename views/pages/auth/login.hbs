@@ -1,15 +1,11 @@
 <div class="auth-container">
-
   <div class="error-container">
     {{#if errorMessage}}
       <p>{{errorMessage}}</p>
     {{/if}}
   </div>
-
   <div class="form-container">
-
     <form action="/auth/login" method="POST">
-
       <div class="auth-heading">
         <h1>Log In</h1>
       </div>
@@ -31,7 +27,8 @@
       </div>
 
       <div class="input-container">
-        <div><label for="password">Password:</label></div>
+        <div>
+          <label for="password">Password:</label></div>
         <div>
           <input
             type="password"
@@ -43,16 +40,14 @@
         </div>
       </div>
 
-      <div class="submit-btn-container"><button
-          class="submit-btn"
-          type="submit"
-        >Submit</button></div>
+      <div class="submit-btn-container">
+        <button class="submit-btn" type="submit">Submit</button>
+      </div>
 
       <div class="input-container signup-prompt">
         <p>Don't have an account yet?</p>
         <a href="/auth/signup">Sign up here!</a>
       </div>
-
     </form>
   </div>
 </div>

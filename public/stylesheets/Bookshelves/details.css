@@ -2,8 +2,8 @@ body {
   background-color: #ffffff;
 }
 
-img {
-  height: 250px;
+.details-book-cover {
+  width: 250px;
 }
 
 .mainContainer {

@@ -8,10 +8,6 @@ const savedBookSchema = new Schema({
   bookPictureUrl: String,
   pageCount: Number,
   categories: [String],
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
 });
 
 const SavedBook = model("SavedBook", savedBookSchema);

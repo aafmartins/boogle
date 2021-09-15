@@ -21,11 +21,21 @@
     </div>
 
     <div class="search-details-container">
-      <h1>{{book.title}}</h1>
+      <h1>
+        {{book.title}}
+      </h1>
       {{#each book.authors}}
-        <p class="author">{{this}}</p>
+        <a
+          class="navbar-brand"
+          href="/search/book-search?author={{this}}&title=&generic=&genre="
+        >
+          {{this}}
+        </a>
+        {{!-- <p class="author">{{this}}</p> --}}
       {{/each}}
-      <p>{{cleanDescription book.description}}</p>
+      <p>
+        {{cleanDescription book.description}}
+      </p>
     </div>
 
   </form>

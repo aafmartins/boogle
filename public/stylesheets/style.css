@@ -75,23 +75,19 @@ footer {
   margin-left: 15px;
 }
 
-/* #navbarContainer {
+#navbarContainer {
   display: flex;
   height: 80px;
-} */
-
-#navbarContainer {
   height: 80px;
   /* margin: 0px 20px 0px 20px; */
-  background: linear-gradient(0deg,
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)),
-    #e9e8e1;
+  background: #fbfaf9;
+  justify-content: space-between;
 }
 
 #boogleLogo {
   height: 50px;
-  margin-left: 25px;
+  /* margin-right: 100px; */
+  /* margin-left: 25px; */
   /* margin-left: 140px; */
 }
 
@@ -142,6 +138,11 @@ h1 {
   color: #294b53;
 }
 
+.houseImage {
+  width: 40px;
+  /* margin-left: 25px; */
+}
+
 .profileImage {
   /* height: 30px; */
   width: 30px;
@@ -156,4 +157,11 @@ h1 {
 .nav-logos {
   display: flex;
   margin: 0px 5px 0px 5px;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: none;
+  padding: none;
 }

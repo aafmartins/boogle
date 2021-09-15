@@ -38,6 +38,7 @@
   border: 1px solid #d9d9d9;
   box-sizing: border-box;
   border-radius: 2px;
+  color: #294b53;
 }
 
 .auth-container {
@@ -77,8 +78,9 @@
 }
 
 ::placeholder {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(41, 75, 83, 0.5);
 }
+
 .submit-btn-container {
   text-align: center;
 }
@@ -98,4 +100,36 @@
   background: #294b53;
   border-color: #294b53;
   transition: ease-in-out;
+}
+
+label.myLabel input[type="file"] {
+  position: absolute;
+  top: -1000px;
+}
+
+.myLabel {
+  margin-top: 10px;
+  width: 286px;
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background: #d9d9d9;
+  text-align: center;
+}
+
+.myLabel:hover {
+  background: #ccc;
+}
+
+.myLabel:active {
+  background: #ccf;
+}
+
+.myLabel :invalid + span {
+  color: #a44;
+}
+
+.myLabel :valid + span {
+  color: #294b53;
 }

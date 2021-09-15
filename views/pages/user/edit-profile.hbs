@@ -13,7 +13,12 @@
 
       <div class="input-container">
         <div><label for="username">Username: </label></div>
-        <div><input type="text" name="username" value={{user.username}} required /></div>
+        <div><input
+            type="text"
+            name="username"
+            value={{user.username}}
+            required
+          /></div>
       </div>
 
       <div class="input-container">
@@ -43,8 +48,8 @@
       </div>
 
       <div class="input-container">
-        <div><label class="myLabel" for="avatarUrl"></div>
-          <div><input type="file" name="avatarUrl" id="avatarUrl" /></div>
+        <label class="myLabel" for="avatarUrl">
+          <input type="file" name="avatarUrl" id="avatarUrl" />
           <span>Upload Profile Picture</span>
         </label>
       </div>
