@@ -1,3 +1,99 @@
+.mainContainer {
+  margin: 120px 200px 40px 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 16px;
+  color: #294b53;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    #e9e8e1;
+  min-width: 700px;
+  line-height: 1.5;
+}
+
+.details-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cover-data-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 16px;
+}
+
+.cover-data-container p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.book-data-container {
+  margin-left: 30px;
+}
+
+.detailsContainer {
+  align-items: flex-start;
+  padding: 32px 16px;
+}
+
+.detailsContainer ul {
+  padding: 0;
+  font-weight: 500;
+}
+
+.detailsContainer li {
+  font-weight: 400;
+}
+
+.detailsContainer h2 {
+  text-transform: uppercase;
+}
+
+.author {
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.description {
+  text-align: justify;
+}
+
+.dlt-btn-container,
+.back-btn-container {
+  text-align: center;
+  margin-right: 16px;
+}
+
+.dlt-btn,
+.back-btn {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  background: #ff9c6e;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 2px;
+  border-color: #ff9c6e;
+  width: 100px;
+  padding: 5px 16px;
+}
+
+.dlt-btn:hover,
+.back.btn:hover {
+  background: #294b53;
+  border-color: #294b53;
+  transition: ease-in-out;
+}
+
+/* 
+
 body {
   background-color: #ffffff;
 }
@@ -58,11 +154,8 @@ a {
   justify-content: center;
   align-items: center;
   padding: 8px 16px;
-  /* position: static; */
   width: 140px;
   height: 40px;
-  /* left: 84px;
-    top: 16px; */
   background: #294b53;
   border: 1px solid #1890ff;
   box-sizing: border-box;
@@ -82,9 +175,6 @@ a {
 h2 {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 800;
-  /* font-size: 30px; */
-  /* line-height: 40px; */
-  /* flex: none; */
 }
 
 h4 {
@@ -99,4 +189,4 @@ h5 {
   font-size: 16px;
   line-height: 24px;
   flex: none;
-}
+} */

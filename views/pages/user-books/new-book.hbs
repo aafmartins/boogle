@@ -1,4 +1,81 @@
-<h1>Create a new Book</h1>
+<div class="new-book-container form-style-5">
+  <h1>Create a new book</h1>
+
+  <form
+    class="form-container"
+    action="/books/new-book"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+
+    <label for="title"></label>
+    <input type="text" name="title" placeholder="Title" required />
+
+    <label for="authors"></label>
+    <input type="text" name="authors" placeholder="Authors" required />
+
+    <label for="publishedDate"></label>
+    <input
+      type="text"
+      name="publishedDate"
+      placeholder="Publication Year (eg. 1984)"
+      required
+    />
+
+    <label for="description"></label>
+    <input type="text" name="description" placeholder="Description" required />
+
+    <label for="pageCount"></label>
+    <input
+      type="number"
+      min="0"
+      name="pageCount"
+      placeholder="Page Count"
+      required
+    />
+
+    <label for="categories"></label>
+    <select name="categories" id="categories" required>
+      <option disable selected value="">Select book genre:</option>
+      <option value="adventure">Adventure</option>
+      <option value="art">Art</option>
+      <option value="bio">Biography</option>
+      <option value="children">Children</option>
+      <option value="crime">Crime</option>
+      <option value="detective">Detective</option>
+      <option value="drama">Drama</option>
+      <option value="fiction">Fiction</option>
+      <option value="history">History</option>
+      <option value="horror">Horror</option>
+      <option value="liter">Literature</option>
+      <option value="mystery">Mystery</option>
+      <option value="poetry">Poetry</option>
+      <option value="romance">Romance</option>
+      <option value="spiral">Spirality</option>
+      <option value="stor">Stories</option>
+      <option value="thriller">Thriller</option>
+      <option value="travel">Travel</option>
+    </select>
+
+    <label class="myLabel" for="bookPictureUrl">
+      <input
+        type="file"
+        name="bookPictureUrl"
+        id="bookPictureUrl"
+        placeholder="Add book cover"
+        required
+      />
+      <span>
+        Upload Book Cover
+      </span>
+    </label>
+
+    <button class="submit-btn" type="submit">Add Book</button>
+
+  </form>
+</div>
+
+{{! <h1>Create a new Book</h1>
 <div class="formContainer form-style-5">
 
   <form action="/books/new-book" method="POST" enctype="multipart/form-data">
@@ -75,4 +152,4 @@
     <button class="submit-btn" type="submit">Add New Book</button>
 
   </form>
-</div>
+</div> }}

@@ -26,6 +26,11 @@
   align-items: flex-end;
 }
 
+.upper-case {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
 .results-item-container {
   display: flex;
   flex-direction: column;
@@ -50,11 +55,6 @@
 
 .cover-img img {
   height: 150px;
-}
-
-.title h5,
-.description p {
-  margin: 0;
 }
 
 .author {

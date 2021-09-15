@@ -127,9 +127,9 @@ label.myLabel input[type="file"] {
 }
 
 .myLabel :invalid + span {
-  color: #a44;
+  color: #294b53;
 }
 
 .myLabel :valid + span {
-  color: #294b53;
+  color: #ff9c6e;
 }
