@@ -93,7 +93,7 @@ router.route("/login")
     });
   })
   // THIS POST METHOD RECEIVES INFORMATION FROM THE LOGIN FORM
-  .post("/login", (req, res) => {
+  .post((req, res) => {
     const {
       username,
       password
