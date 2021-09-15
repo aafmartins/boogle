@@ -4,21 +4,15 @@ const SavedBook = require("../models/SavedBook.model");
 const User = require("../models/User.model");
 const router = require("express").Router();
 
-
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-const buildQuery = require("../utilityFunctions/buildQuery")
+const buildQuery = require("../utilityFunctions/buildQuery");
 
 router.get("/book-search", (req, res, next) => {
-  const {
-    title,
-    author,
-    generic,
-    genre
-  } = req.query;
+  const { title, author, generic, genre } = req.query;
 
-  let query = buildQuery(title, author, generic, genre)
-  console.log(query)
+  let query = buildQuery(title, author, generic, genre);
+
   const listOfWords = [
     "love",
     "passion",
@@ -79,29 +73,29 @@ router.post("/:id", (req, res) => {
 
       const {
         title = "Not available",
-          authors = ["No authors known"],
-          publishedDate = "",
-          description,
-          pageCount,
-          categories = ["No category available"],
+        authors = ["No authors known"],
+        publishedDate = "",
+        description,
+        pageCount,
+        categories = ["No category available"],
       } = book;
       const bookPictureUrl = book.imageLinks.thumbnail;
+
       SavedBook.create({
-          title,
-          authors,
-          publishedDate,
-          description,
-          bookPictureUrl,
-          pageCount,
-          categories,
-          user: user._id,
-        })
+        title,
+        authors,
+        publishedDate,
+        description,
+        bookPictureUrl,
+        pageCount,
+        categories,
+      })
         .then((savedBook) => {
           User.findByIdAndUpdate(user._id, {
-              $push: {
-                savedBooks: savedBook._id,
-              },
-            })
+            $push: {
+              savedBooks: savedBook._id,
+            },
+          })
             .then(() => res.redirect("/bookshelf/my-saved-books"))
             .catch((err) => console.log(err));
         })

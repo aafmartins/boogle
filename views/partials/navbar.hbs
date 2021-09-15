@@ -1,55 +1,69 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" id="navbarContainer">
-{{!-- <a class="navbar-brand" href="/">Home</a> --}}
+<nav
+  class="navbar navbar-expand-lg fixed-top navbar-light bg-light"
+  id="navbarContainer"
+>
+  {{! <a class="navbar-brand" href="/">Home</a> }}
 
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  {{! <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarText"
+    aria-controls="navbarText"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> }}
 
+  {{! <div class="collapse navbar-collapse" id="navbarText"> }}
+        <ul>
+  <div id="navbarText">
 
-  <div class="collapse navbar-collapse" id="navbarText">
-   
-<div>
-  <ul class="navbar-nav mr-auto">
-    
-          <li class="nav-item active">
-          <a href="/">
-          <img id="boogleLogo" src="/images/Logo-Item-Medium.png" alt="">
+      <div class="nav-logos">
+
+        <li>
+          <a id="button" class="nav-link" href="/">
+            <img class="houseImage" href="" src="/images/house.png" alt="" />
           </a>
-      </li>
+        </li>
+        <li>
+          <a
+            class="navbar-brand"
+            href="/search/book-search?author=&title=&generic={{randomWord}}&genre="
+          >Discover new books</a>
+        </li>
+      </div>
+          </ul>
+    <div>
 
+      {{! <ul class="navbar-nav mr-auto"> }}
+      {{! <li class="nav-item active"> }}
+      <a href="/">
+        <img id="boogleLogo" src="/images/Logo-Item-Medium.png" alt="" />
+      </a>
+      {{! </li> }}
+      {{! </ul> }}
+    </div>
 
-</div>
-
-<div>
-  <a class="navbar-brand" href="/search/book-search?author=&title=&generic={{randomWord}}&genre=">Discover new books</a> 
-</div>
-
-
-<div class="nav-logos">
- <li class="nav-item">
- <a id="button" class="nav-link" href="/bookshelf/my-saved-books">
-        <img class="bookImage" href="" src="/images/book-logo.png" alt="">
-        </a>
-      </li>
-      <li>
-{{#if currentUser.circleAvatarUrl}}
-<a id="button" class="nav-link" href="/users/profile">
-       <img class="profileImage" src="" alt="">
-       </a>
-       {{else}}
-       <a id="button" class="nav-link" href="/users/profile">
-        <img class="profileImage" href="" src="/images/profile-user-logo.png" alt="">
-        </a>
-       {{/if}} 
-</li>
-</div>
-      </ul>
-</div>
-
-
+    <ul>
+      <div class="nav-logos" id="nav-links">
+        <li class="nav-item">
+          <a id="button" class="nav-link" href="/bookshelf/my-saved-books">
+            <img class="bookImage" href="" src="/images/book-logo.png" alt="" />
+          </a>
+        </li>
+        <li>
+          <a id="button" class="nav-link" href="/users/profile">
+            <img
+              class="profileImage"
+              href=""
+              src="/images/profile-user-logo.png"
+              alt=""
+            />
+          </a>
+        </li>
+      </div>
+    </ul>
   </div>
-
-
 </nav>
-

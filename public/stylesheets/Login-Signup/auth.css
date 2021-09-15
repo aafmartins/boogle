@@ -25,8 +25,8 @@
 }
 
 .form-container form {
-  margin-top: 7vh;
-  background-color: rgba(248, 249, 250, 0.5);
+  margin-top: 100px;
+  background-color: rgba(248, 249, 250, 0.8);
   padding: 30px;
   border-radius: 4px;
 }

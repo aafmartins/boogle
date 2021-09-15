@@ -29,24 +29,17 @@ router.get("/:id/edit", (req, res) => {
     .then((user) => {
       res.render("pages/user/edit-profile", {
         user,
-        style: "Profile/edit-profile.css"
+        style: "Profile/edit-profile.css",
       });
     })
     .catch((err) => console.log(err));
 });
 
-{
-  style: "Login-Signup/auth.css"
-}
-
 router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
   const id = req.params.id;
-  const {
-    username,
-    email,
-    password
-  } = req.body;
+  const { username, email, password } = req.body;
   const avatarUrl = req.file.path;
+
   if (
     !username ||
     username === "" ||
@@ -58,7 +51,7 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
   ) {
     res.render("pages/auth/signup", {
       errorMessage: "Username and password are required",
-      style: "Login-Signup/auth.css"
+      style: "Login-Signup/auth.css",
     });
   }
 
@@ -66,16 +59,18 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
   const hashPassword = bcrypt.hashSync(password, salt);
 
   User.findByIdAndUpdate(id, {
-      username,
-      email,
-      password: hashPassword,
-      avatarUrl,
-    })
+    username,
+    email,
+    password: hashPassword,
+    avatarUrl:
+      avatarUrl ||
+      "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png",
+  })
     .then(() => res.redirect("/users/profile"))
     .catch((error) =>
       res.render("pages/auth/signup", {
         errorMessage: error,
-        style: "Login-Signup/auth.css"
+        style: "Login-Signup/auth.css",
       })
     );
 });
@@ -84,14 +79,15 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
 router.get("/profile", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
     User.findById(req.session.currentUser._id).then((user) => {
-      let pictureUrl = user.avatarUrl
+      let pictureUrl = user.avatarUrl;
       if (!user.avatarUrl) {
-        pictureUrl = "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png"
+        pictureUrl =
+          "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png";
       }
       res.render("pages/user/profile", {
         user,
         pictureUrl,
-        style: "Profile/profile.css"
+        style: "Profile/profile.css",
       });
     });
   } else res.redirect("/");

@@ -1,17 +1,23 @@
 <div class="mainContainer">
 
   <div class="imageContainer">
-    <img src="{{book.bookPictureUrl}}" />
+    <img class="details-book-cover" src="{{book.bookPictureUrl}}" />
   </div>
 
   <div class="detailsContainer">
     <h2>Title: {{book.title}}</h2>
     <h4>Authors: {{book.authors}}</h4>
 
-    <p><b>Description:</b> {{cleanDescription book.description}}</p>
+    <p><b>Description:</b>
+      {{cleanDescription book.description}}
+    </p>
 
-    <p><b>Published in:</b> {{book.publishedDate}}</p>
-    <p><b>Page count:</b> {{book.pageCount}}</p>
+    <p><b>Published in:</b>
+      {{book.publishedDate}}
+    </p>
+    <p><b>Page count:</b>
+      {{book.pageCount}}
+    </p>
     <h4><b>Genre:</b></h4>
     <ul>
       {{#each book.categories}}
@@ -23,6 +29,7 @@
   </div>
 
   <div class="linksContainer">
+
     <a class="routeBtn" href="/my-saved-books/{{book._id}}/delete">
       <button class="routeBtn">
         Delete
@@ -34,6 +41,7 @@
         Back
       </button>
     </a>
+
   </div>
 
 </div>

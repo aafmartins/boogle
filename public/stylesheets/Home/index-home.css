@@ -10,6 +10,7 @@ body {
   justify-content: space-around;
   padding-top: 80px;
   padding-bottom: 30px;
+  margin-top: 100px;
 }
 
 .hero-left-part {
@@ -77,6 +78,10 @@ body {
   margin-top: 60px;
 }
 
+.mainFormContainer form {
+  margin: 0;
+}
+
 .formInputsContainer {
   display: flex;
   justify-content: space-evenly;
@@ -135,7 +140,6 @@ select {
       rgba(255, 255, 255, 0.6)
     ),
     #e9e8e1;
-  margin-top: 0px;
 }
 
 .Signup-image {
