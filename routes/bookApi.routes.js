@@ -7,12 +7,7 @@ const router = require("express").Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/book-search", (req, res, next) => {
-  const {
-    title,
-    author,
-    generic,
-    genre
-  } = req.query;
+  const { title, author, generic, genre } = req.query;
 
   let query = ``;
 
@@ -39,9 +34,20 @@ router.get("/book-search", (req, res, next) => {
     checkAppend(query);
     query += `ingenre:${genre}`;
   }
-
+  const listOfWords = [
+    "love",
+    "passion",
+    "happy",
+    "travel",
+    "rick roll",
+    "crime",
+    "art",
+    "detective",
+    "sad",
+  ];
+  let randomWord = listOfWords[Math.floor(Math.random() * listOfWords.length)];
   const params = {
-    q: query || "old",
+    q: query || randomWord,
     key: process.env.BOOKAPI,
     maxResults: 20,
     langRestrict: "en",
@@ -55,7 +61,7 @@ router.get("/book-search", (req, res, next) => {
       // console.log(result.data.items[0].volumeInfo);
       res.render("pages/search/search-results", {
         books: result,
-        style: "Search-Result/list.css"
+        style: "Search-Result/list.css",
       });
     })
     .catch((err) => {
@@ -73,7 +79,7 @@ router.get("/:id", isLoggedIn, (req, res) => {
       res.render("pages/search/search-book-detail", {
         book: book.data.volumeInfo,
         bookId: book.data.id,
-        style: "Search-Result/details.css"
+        style: "Search-Result/details.css",
       });
     })
     .catch((err) => console.log(err));
@@ -91,31 +97,31 @@ router.post("/:id", (req, res) => {
 
       const {
         title = "Not available",
-          authors = ["No authors known"],
-          publishedDate = "",
-          description,
-          pageCount,
-          categories = ["No category available"],
+        authors = ["No authors known"],
+        publishedDate = "",
+        description,
+        pageCount,
+        categories = ["No category available"],
       } = book;
-      const bookPictureUrl = book.imageLinks.thumbnail
+      const bookPictureUrl = book.imageLinks.thumbnail;
       SavedBook.create({
-          title,
-          authors,
-          publishedDate,
-          description,
-          bookPictureUrl,
-          pageCount,
-          categories,
-          user: user._id,
-        })
+        title,
+        authors,
+        publishedDate,
+        description,
+        bookPictureUrl,
+        pageCount,
+        categories,
+        user: user._id,
+      })
         .then((savedBook) => {
           console.log("Inside the first then:", savedBook);
 
           User.findByIdAndUpdate(user._id, {
-              $push: {
-                savedBooks: savedBook._id,
-              },
-            })
+            $push: {
+              savedBooks: savedBook._id,
+            },
+          })
             .then(() => res.redirect("/bookshelf/my-saved-books"))
             .catch((err) => console.log(err));
         })

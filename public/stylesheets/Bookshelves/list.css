@@ -1,137 +1,136 @@
 body {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
-        #E9E8E1;
-    margin: 0;
-    padding: 0;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    #e9e8e1;
+  margin: 0;
+  padding: 0;
 }
 
 .ulInSavedBook {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 li {
-    list-style: none;
-}
-
-img {
-    height: 250px;
-}
-
-.mainContainer {
-    /* margin: 40px 250px 40px 250px; */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    margin-bottom: 100px;
-    width: 939px;
-    height: 540px;
-
-    color: #294B53;
-    background-color: #E5E5E5;
-
-
-}
-
-h2 {
-    font-size: 30px;
-    line-height: 40px;
-    flex: none;
-}
-
-h4 {
-    font-size: 20px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    flex: none;
-
-}
-
-h5 {
-    font-size: 16px;
-    line-height: 24px;
-    flex: none;
-
-}
-
-
-.imageContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 16px;
-}
-
-.detailsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 32px 16px;
-    width: 527px;
-    text-align: justify;
-    /* height: 508px; */
-}
-
-.headerImageContainer {
-    display: flex;
-    justify-content: center;
-    background-color: #FFF2E8;
-    width: inherit;
-    flex-direction: column;
-    align-items: center;
-    color: #294B53;
+  list-style: none;
 }
 
 .headerImage {
-    padding: 30px;
+  height: 250px;
+}
+
+.mainContainer {
+  /* margin: 40px 250px 40px 250px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 100px;
+  width: 939px;
+  height: 540px;
+
+  color: #294b53;
+  background-color: #e5e5e5;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 40px;
+  flex: none;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+h5 {
+  font-size: 16px;
+  line-height: 24px;
+  flex: none;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px 16px;
+  width: 527px;
+  text-align: justify;
+  /* height: 508px; */
+}
+
+.headerImageContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #fff2e8;
+  width: inherit;
+  flex-direction: column;
+  align-items: center;
+  color: #294b53;
+  margin-top: 80px;
+}
+
+.headerImage {
+  padding: 30px;
 }
 
 h1 {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .navigatingBtn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 16px;
-    position: static;
-    width: 170px;
-    height: 40px;
-    left: 0px;
-    top: 0px;
-    background: #FF9C6E;
-    border: 1px solid #FFD8BF;
-    box-sizing: border-box;
-    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-    border-radius: 2px;
-    flex: none;
-    flex-grow: 0;
-    margin: 16px 0px;
-    /* font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  position: static;
+  width: 170px;
+  height: 40px;
+  left: 0px;
+  top: 0px;
+  background: #ff9c6e;
+  border: 1px solid #ffd8bf;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 2px;
+  flex: none;
+  flex-grow: 0;
+  margin: 16px 0px;
+  /* font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 24px; */
-    text-align: center;
-    color: #FFFFFF;
-
+  text-align: center;
+  color: #ffffff;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .buttonContainer {
-    display: flex;
+  display: flex;
 }

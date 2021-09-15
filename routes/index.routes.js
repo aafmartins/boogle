@@ -6,15 +6,16 @@ const User = require("../models/User.model");
 router.get("/", function (req, res, next) {
   User.find()
     .then((users) => {
-      let id = null;
-      if (req.session.currentUser) {
-        id = req.session.currentUser._id;
-      }
+      let currentUser = req.session.currentUser;
+      /**
+       * if(req.session.currentUser)) res.render("logged-in-index")
+       * else res.render("anon-index")
+       */
       res.render("index", {
         title: "Boogle",
         users: users,
-        currentUser: id,
-        style: "Home/index-home.css"
+        style: "Home/index-home.css",
+        layout: currentUser ? "layout" : "anonLayout",
       });
     })
     .catch((err) => console.log(err));

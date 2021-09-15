@@ -68,7 +68,7 @@ footer {
 }
 
 .aFooter:hover {
-  color: salmon;
+  color: #ff9c6e;
 }
 
 .navbar-brand {
@@ -81,12 +81,20 @@ footer {
 } */
 
 #navbarContainer {
-  height: 60px;
+  height: 80px;
+  /* margin: 0px 20px 0px 20px; */
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    #e9e8e1;
 }
 
 #boogleLogo {
   height: 50px;
-  margin-left: 140px;
+  margin-left: 25px;
+  /* margin-left: 140px; */
 }
 
 #navbarText {
@@ -134,4 +142,24 @@ a:hover {
 h1 {
   font-family: "Nunito Sans", sans-serif;
   color: #294b53;
+<<<<<<< HEAD
 }
+=======
+}
+
+.profileImage {
+  /* height: 30px; */
+  width: 30px;
+}
+
+.bookImage {
+  /* height: 30px; */
+  width: 40px;
+  margin: 0px 5px 0px 5px;
+}
+
+.nav-logos {
+  display: flex;
+  margin: 0px 5px 0px 5px;
+}
+>>>>>>> df5859e195046481d4f5c5b984d2d79965f509bc

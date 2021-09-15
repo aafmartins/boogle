@@ -16,6 +16,7 @@ const userSchema = new Schema({
     required: true,
   },
   avatarUrl: String,
+  circleAvatarUrl: String,
   savedBooks: [
     {
       type: Schema.Types.ObjectId,
