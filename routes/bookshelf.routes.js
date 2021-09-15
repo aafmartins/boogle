@@ -11,7 +11,6 @@ router.get("/my-saved-books", isLoggedIn, (req, res) => {
     User.findById(req.session.currentUser._id)
       .populate("savedBooks")
       .then((result) => {
-        console.log("What we're dealing with:", result.savedBooks);
         res.render("pages/saved-books/saved-book-list", {
           result: result.savedBooks,
           style: "Bookshelves/list.css"
@@ -24,11 +23,9 @@ router.get("/my-saved-books", isLoggedIn, (req, res) => {
 //DISPLAY CREATED BOOKS BOOKSHELF
 router.get("/my-created-books", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
-    console.log(req.session.currentUser);
     User.findById(req.session.currentUser._id)
       .populate("createdBooks")
       .then((result) => {
-        console.log("What we're dealing with:", result.createdBooks);
         res.render("pages/user-books/my-book-list", {
           result: result.createdBooks,
           style: "Bookshelves/list.css"

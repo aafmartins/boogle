@@ -4,36 +4,21 @@ const SavedBook = require("../models/SavedBook.model");
 const User = require("../models/User.model");
 const router = require("express").Router();
 
+
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+const buildQuery = require("../utilityFunctions/buildQuery")
+
 router.get("/book-search", (req, res, next) => {
-  const { title, author, generic, genre } = req.query;
+  const {
+    title,
+    author,
+    generic,
+    genre
+  } = req.query;
 
-  let query = ``;
-
-  function checkAppend(string) {
-    // return string === "" ? string : string + '+'
-    // [title, author, generic].join('+')
-    if (string !== "") {
-      string += "+";
-    }
-  }
-
-  if (title) {
-    query += `intitle:${title}`;
-  }
-  if (author) {
-    checkAppend(query);
-    query += `inauthor:${author}`;
-  }
-  if (generic) {
-    checkAppend(query);
-    query += `ingeneric:${generic}`;
-  }
-  if (genre) {
-    checkAppend(query);
-    query += `ingenre:${genre}`;
-  }
+  let query = buildQuery(title, author, generic, genre)
+  console.log(query)
   const listOfWords = [
     "love",
     "passion",
@@ -57,8 +42,6 @@ router.get("/book-search", (req, res, next) => {
   useBooksApiHandler
     .getAllBooks(params)
     .then((result) => {
-      // console.log("yayya", params);
-      // console.log(result.data.items[0].volumeInfo);
       res.render("pages/search/search-results", {
         books: result,
         style: "Search-Result/list.css",
@@ -91,37 +74,34 @@ router.post("/:id", (req, res) => {
     .getBookById(id)
     .then((result) => {
       const book = result.data.volumeInfo;
-      console.log("Our user:", req.session, req.session.currentUser);
 
       const user = req.session.currentUser;
 
       const {
         title = "Not available",
-        authors = ["No authors known"],
-        publishedDate = "",
-        description,
-        pageCount,
-        categories = ["No category available"],
+          authors = ["No authors known"],
+          publishedDate = "",
+          description,
+          pageCount,
+          categories = ["No category available"],
       } = book;
       const bookPictureUrl = book.imageLinks.thumbnail;
       SavedBook.create({
-        title,
-        authors,
-        publishedDate,
-        description,
-        bookPictureUrl,
-        pageCount,
-        categories,
-        user: user._id,
-      })
+          title,
+          authors,
+          publishedDate,
+          description,
+          bookPictureUrl,
+          pageCount,
+          categories,
+          user: user._id,
+        })
         .then((savedBook) => {
-          console.log("Inside the first then:", savedBook);
-
           User.findByIdAndUpdate(user._id, {
-            $push: {
-              savedBooks: savedBook._id,
-            },
-          })
+              $push: {
+                savedBooks: savedBook._id,
+              },
+            })
             .then(() => res.redirect("/bookshelf/my-saved-books"))
             .catch((err) => console.log(err));
         })

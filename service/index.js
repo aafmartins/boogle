@@ -18,7 +18,6 @@ class GoogleBookApi {
     getBookById = (id) => {
         return this.api.get(`https://www.googleapis.com/books/v1/volumes/${id}`)
             .then(response => {
-                console.log(`GoogleBookApi received request for book id: ${id}.\n Returning data: ${response.data.volumeInfo.authors[0]}`)
                 return response;
             })
     }

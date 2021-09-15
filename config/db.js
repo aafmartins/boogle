@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 
 const MONGO_URL = "mongodb://localhost/boogle"; //`${process.env.MONGODB_URI}/${process.env.DB_NAME}`;
 
-console.log("MONGO_URL: ", MONGO_URL);
+
 mongoose
   .connect(MONGO_URL, {
     useNewUrlParser: true,
