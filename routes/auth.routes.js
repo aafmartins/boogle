@@ -13,8 +13,10 @@ const fileUploader = require("../config/cloudinary");
 
 //2 - Create 5 routes: 2 for login, 2 for signup and 1 for logout
 router.get("/signup", isNotLoggedIn, (req, res) => {
+  let currentUser = req.session.currentUser;
   res.render("pages/auth/signup", {
     style: "Login-Signup/auth.css",
+    layout: currentUser ? "layout" : "anonLayout",
   });
 });
 
@@ -78,8 +80,10 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.get("/login", isNotLoggedIn, (req, res) => {
+  let currentUser = req.session.currentUser;
   res.render("pages/auth/login", {
     style: "Login-Signup/auth.css",
+    layout: currentUser ? "layout" : "anonLayout",
   });
 });
 

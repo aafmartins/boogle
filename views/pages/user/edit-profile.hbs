@@ -1,20 +1,58 @@
-<h1>Edit My Profile</h1>
+<div class="auth-container">
 
-<form action="/users/{{user.id}}/edit" method="POST" enctype="multipart/form-data">
-  <label for="username">Username: </label>
-  <input type="text" name="username" value={{user.username}} required />
+  <div class="form-container">
+    <form
+      action="/users/{{user.id}}/edit"
+      method="POST"
+      enctype="multipart/form-data"
+    >
 
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email" value={{user.email}} required />
+      <div class="auth-heading">
+        <h1>Edit My Profile</h1>
+      </div>
 
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password" placeholder="*****" required />
+      <div class="input-container">
+        <div><label for="username">Username: </label></div>
+        <div><input type="text" name="username" value={{user.username}} required /></div>
+      </div>
 
-  <label class="myLabel" for="avatarUrl">
-  <input type="file" name="avatarUrl" id="avatarUrl" />
-  <span>Upload Profile Picture</span>
-  </label>
+      <div class="input-container">
+        <label for="email">Email:</label>
+        <div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={{user.email}}
+            required
+          />
+        </div>
+      </div>
 
+      <div class="input-container">
+        <div><label for="password">Password:</label></div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="*****"
+            required
+          />
+        </div>
+      </div>
 
-  <button class="submit-btn" type="submit">Submit</button>
-</form>
+      <div class="input-container">
+        <div><label class="myLabel" for="avatarUrl"></div>
+          <div><input type="file" name="avatarUrl" id="avatarUrl" /></div>
+          <span>Upload Profile Picture</span>
+        </label>
+      </div>
+
+      <div class="submit-btn-container">
+        <button class="submit-btn" type="submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div>

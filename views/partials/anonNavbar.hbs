@@ -26,24 +26,19 @@
 </div>
 
 
-<div class="nav-logos">
- <li class="nav-item">
- <a id="button" class="nav-link" href="/bookshelf/my-saved-books">
-        <img class="bookImage" href="" src="/images/book-logo.png" alt="">
-        </a>
+<div id="nav-links">
+              <li class="nav-item">
+        <a id="button" class="nav-link" href="/auth/login"><button class="navbarBtn" >
+    Login
+</button>
+</a>
       </li>
-      <li>
-{{#if currentUser.circleAvatarUrl}}
-<a id="button" class="nav-link" href="/users/profile">
-       <img class="profileImage" src="" alt="">
-       </a>
-       {{else}}
-       <a id="button" class="nav-link" href="/users/profile">
-        <img class="profileImage" href="" src="/images/profile-user-logo.png" alt="">
-        </a>
-       {{/if}} 
-</li>
-</div>
+      <li class="nav-item">
+        <a id="button" class="nav-link" href="/auth/signup"><button class="navbarBtn" >
+    Sign Up
+</button>
+</a>
+      </li>
       </ul>
 </div>
 
@@ -53,3 +48,8 @@
 
 </nav>
 
+
+          {{!-- {{#unless currentUser}}
+        <a href="/auth/signup">Signup</a>
+        <a href="/auth/login">Login</a>
+      {{/unless}} --}}
