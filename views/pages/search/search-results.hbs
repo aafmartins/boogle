@@ -13,7 +13,7 @@
 
      
         {{#each books.data.items}}
-        {{#if this.volumeInfo.authors}}
+        {{#if this.volumeInfo.description}}
  <div class="results-item-container">
           <li>
 
@@ -49,5 +49,9 @@
         {{/each}}
      
     </ul>
+
+            <div class="search-another-link-container">
+               <a href="/"> <button class="search-another-link" >Search more books</button> </a>
+             </div>
 
 </div>

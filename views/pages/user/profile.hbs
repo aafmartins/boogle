@@ -1,20 +1,17 @@
-{{!-- <h1>My Profile</h1>
- --}}
+{{! <h1>My Profile</h1>
+ }}
 
 <div class="mainContainer">
-<h2> Username: {{user.username}}</h2>
-<h4>{{user.email}}</h4>
-<img src="{{pictureUrl}}" alt="You have no profile picture" />
+  <h2> Hello, {{user.username}}!</h2>
+  <h4>{{user.email}}</h4>
+  <img src="{{pictureUrl}}" alt="You have no profile picture" />
 
-<a href="/users/{{user._id}}/edit">
-<button class="routeBtn" type="submit">Edit Profile</button>
-</a>
+  <a href="/users/{{user._id}}/edit">
+    <button class="routeBtn" type="submit">Edit Profile</button>
+  </a>
 
-
-<form action="/auth/logout" method="GET">
-  <button class="submit-btn" type="submit">Logout</button>
-</form>
-
-
+  <form action="/auth/logout" method="GET">
+    <button class="submit-btn" type="submit">Logout</button>
+  </form>
 
 </div>
