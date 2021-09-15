@@ -1,9 +1,9 @@
+// REQUIRE CHECKAPPEND FUNCTION
 const checkAppend = require("./checkAppend")
 
+// THIS FUNCTION HELPS YOU BUILD THE QUERY INSIDE THE BOOK API ROUTE
 function buildQuery(title, author, generic, genre) {
-
     let query = ``;
-
     if (title) {
         query += `intitle:${title}`;
     }

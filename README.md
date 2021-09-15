@@ -54,7 +54,44 @@ Book-search-results - As a user you want to be able to search for a book and acc
 
 ## ROUTES
 
-Example: https://gist.github.com/jorgeberrizbeitia/f1f0c89eccf74f6c6caceb09d3f26091
+- GET / 
+  - renders the homepage
+- GET /auth/signup
+  - redirects to / if user logged in
+  - renders the signup form
+- POST /auth/signup
+  - redirects to / if user logged in
+  - body:
+    - username
+    - email
+    - password
+- GET /auth/login
+  - redirects to / if user logged in
+  - renders the login form (with flash msg)
+- POST /auth/login
+  - redirects to / if user logged in
+  - body:
+    - username
+    - password
+- POST /auth/logout
+  - body: (empty)
+
+- GET /events
+  - renders the event list + the create form
+- POST /events/create 
+  - redirects to / if user is anonymous
+  - body: 
+    - name
+    - date
+    - location
+    - description
+- GET /events/:id
+  - renders the event detail page
+  - includes the list of attendees
+  - attend button if user not attending yet
+- POST /events/:id/attend 
+  - redirects to / if user is anonymous
+  - body: (empty - the user is already stored in the session)
 
 ## MODELS
 
