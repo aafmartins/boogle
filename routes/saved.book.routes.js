@@ -1,7 +1,8 @@
+//IMPORT PACKAGES AND SAVED BOOKS MODEL
 const router = require("express").Router();
 const SavedBook = require("../models/SavedBook.model");
 
-//DELETE BOOKS SAVED FROM API
+//THIS GET METHOD DELETES BOOKS SAVED FROM API AND REDIRECTS TO SAVED BOOKSHELF
 router.get("/:id/delete", (req, res) => {
   const id = req.params.id;
   SavedBook.findByIdAndDelete(id)
@@ -11,7 +12,7 @@ router.get("/:id/delete", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-//DISPLAY DETAILS OF BOOKS SAVED FROM API
+//THIS GET DISPLAYS DETAILS OF BOOKS SAVED FROM API AND RENDERS SAVED BOOKS DETAILS
 router.get("/:id", (req, res) => {
   const id = req.params.id;
   SavedBook.findById(id)

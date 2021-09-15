@@ -1,4 +1,8 @@
-const { Schema, model } = require("mongoose");
+// MODEL FOR CREATED BOOKS
+const {
+  Schema,
+  model
+} = require("mongoose");
 
 const createdBookSchema = new Schema({
   title: String,

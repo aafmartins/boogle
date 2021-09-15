@@ -1,11 +1,10 @@
+//import packages, API, User model
 const User = require("../models/User.model");
 const router = require("express").Router();
-const CreatedBook = require("../models/CreatedBook.model");
-const SavedBook = require("../models/SavedBook.model");
-
+// IMPORT FUNCTIONS
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-//DISPLAY SAVED BOOKS BOOKSHELF
+//THIS GET DISPLAYS SAVED BOOKS BOOKSHELF, AND POPULATES USER
 router.get("/my-saved-books", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
     User.findById(req.session.currentUser._id)
@@ -20,7 +19,7 @@ router.get("/my-saved-books", isLoggedIn, (req, res) => {
   } else res.redirect("/");
 });
 
-//DISPLAY CREATED BOOKS BOOKSHELF
+//THIS GET DISPLAYS CREATED BOOKS BOOKSHELF, AND POPULATES USER
 router.get("/my-created-books", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
     User.findById(req.session.currentUser._id)

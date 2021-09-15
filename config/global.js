@@ -34,6 +34,9 @@ module.exports = (app) => {
 
   hbs.registerPartials(path.join(__dirname, "..", "/views/partials"));
 
+
+
+  // REGISTERED HANDLEBARS HELPER FUNCTIONS TO HELP WITH CLEARING DATA COMING BACK FROM API
   hbs.registerHelper("splitUrl", function (string) {
     if (string) {
       return string.split(/\s+/).slice(0, 20).join(" ") + "...";
@@ -49,6 +52,7 @@ module.exports = (app) => {
       return string.replace(/<.{0,2}>/g, "");
     }
   });
+
 
   // Handles access to the public folder
   app.use(express.static(path.join(__dirname, "..", "public")));

@@ -1,4 +1,8 @@
-const { Schema, model } = require("mongoose");
+// MODEL FOR USER
+const {
+  Schema,
+  model
+} = require("mongoose");
 
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const userSchema = new Schema({
@@ -16,20 +20,16 @@ const userSchema = new Schema({
     required: true,
   },
   avatarUrl: String,
-  savedBooks: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "SavedBook",
-      default: [],
-    },
-  ],
-  createdBooks: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "CreatedBook",
-      default: [],
-    },
-  ],
+  savedBooks: [{
+    type: Schema.Types.ObjectId,
+    ref: "SavedBook",
+    default: [],
+  }, ],
+  createdBooks: [{
+    type: Schema.Types.ObjectId,
+    ref: "CreatedBook",
+    default: [],
+  }, ],
 });
 
 const User = model("User", userSchema);
