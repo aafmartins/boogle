@@ -1,3 +1,16 @@
+.error-container {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #ff9c6e;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.error-container p {
+  margin: 0;
+}
+
 .auth-heading {
   font-family: "Nunito Sans", sans-serif;
   font-weight: bold;
@@ -13,6 +26,9 @@
 
 .form-container form {
   margin-top: 8vh;
+  background-color: rgba(248, 249, 250, 0.5);
+  padding: 30px;
+  border-radius: 4px;
 }
 
 .input-container input {
@@ -25,16 +41,17 @@
 }
 
 .auth-container {
-  /* background-image: url("/images/bg.png");
-  background-size: 100%;
+  background-image: url("/images/bg.png");
   background-repeat: no-repeat;
-  height: calc(100vh - 150px); */
+  height: 100vh;
+  background-size: 100%;
   color: #294b53;
+  background-position: 0% 100%;
 }
 
-.background-img{
+/* .background-img{
  width: 100vw;
-}
+} */
 
 .input-container {
   margin: 25px 0;

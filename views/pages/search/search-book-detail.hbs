@@ -1,19 +1,32 @@
-<h1>Book details</h1>
-<form action="/search/{{bookId}}" method="POST">
-  <h1>{{book.title}}</h1>
-  {{#each book.authors}}
-    {{this}}
-  {{/each}}
-  <p>{{book.description}}</p>
+<div class="search-details-main-container">
+  <form action="/search/{{bookId}}" method="POST">
 
-  <img src="{{book.imageLinks.thumbnail}}" alt="" />
-  <p>Publisher: {{book.publisher}}</p>
-  <p>Published Date: {{book.publishedDate}}</p>
-  <p>Page count: {{book.pageCount}}</p>
-  <p
-  >{{book.industryIdentifiers.1.type}}:{{book.industryIdentifiers.1.identifier}}</p>
+    <div class="details-heading">
+      <div class="cover-data-container">
+        <div class="search-details-cover-container">
+          <img src="{{book.imageLinks.thumbnail}}" alt="" />
+        </div>
+        <div class="book-data-container">
+          <p>Published by {{book.publisher}}</p>
+          <p>Published in {{book.publishedDate}}</p>
+          <p>{{book.pageCount}} pages</p>
+          <p>
+            {{book.industryIdentifiers.1.type}}:{{book.industryIdentifiers.1.identifier}}
+          </p>
+        </div>
+      </div>
+      <div class="add-btn-container">
+        <button class="add-btn" type="submit">Add to Bookshelf</button>
+      </div>
+    </div>
 
-  <button type="submit">Add</button>
-</form>
+    <div class="search-details-container">
+      <h1>{{book.title}}</h1>
+      {{#each book.authors}}
+        <p class="author">{{this}}</p>
+      {{/each}}
+      <p>{{cleanDescription book.description}}</p>
+    </div>
 
-{{!-- {{bookId}} --}}
+  </form>
+</div>
