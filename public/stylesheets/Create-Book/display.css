@@ -1,81 +1,74 @@
 body {
-    background-color: #FFFFFF;
-    color: #294B53;
+  background-color: #ffffff;
+  color: #294b53;
 }
-
-img {
-    height: 250px;
-}
-
 
 .submit-btn {
-    margin-top: 10px;
-    text-align: center;
-    color: white;
-    background: #ff9c6e;
-    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-    border-radius: 2px;
-    border-color: #ff9c6e;
-    width: 174px;
-    padding: 5px 16px;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  background: #ff9c6e;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 2px;
+  border-color: #ff9c6e;
+  width: 174px;
+  padding: 5px 16px;
 }
 
 ::placeholder,
 select {
-    color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.25);
 }
 
 input,
 select {
-    margin-top: 10px;
-    width: 286px;
-    padding: 8px 12px;
-    border: 1px solid #d9d9d9;
-    box-sizing: border-box;
-    border-radius: 2px;
+  margin-top: 10px;
+  width: 286px;
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 2px;
 }
 
 form {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #294b53;
-
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #294b53;
 }
 
 h1 {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 800;
-    text-align: center;
-    margin: 20px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 8vh;
 }
 
-
 label.myLabel input[type="file"] {
-    position:absolute;
-    top: -1000px;
+  position: absolute;
+  top: -1000px;
 }
 
 /***** Example custom styling *****/
 .myLabel {
-    border: 2px solid #AAA;
-    border-radius: 4px;
-    padding: 7px 25px;
-    margin: 4px 7px 7px 7px;
-    background: #DDD;
-    display: inline-block;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  padding: 7px 25px;
+  margin: 4px 7px 7px 7px;
+  background: #ddd;
+  display: inline-block;
 }
 .myLabel:hover {
-    background: #CCC;
+  background: #ccc;
 }
 .myLabel:active {
-    background: #CCF;
+  background: #ccf;
 }
 .myLabel :invalid + span {
-    /* color: #A44; */
+  /* color: #A44; */
 }
 .myLabel :valid + span {
-    color: #294B53;
+  color: #294b53;
 }

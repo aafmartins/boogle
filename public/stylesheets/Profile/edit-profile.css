@@ -1,98 +1,101 @@
-body {
-    background-color: #FFFFFF;
-    color: #294B53;
+.error-container {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #ff9c6e;
+  font-size: 30px;
+  margin-top: 30px;
 }
 
-img {
-    height: 250px;
+.error-container p {
+  margin: 0;
 }
 
+.auth-heading {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container form {
+  margin-top: 100px;
+  background-color: rgba(248, 249, 250, 0.5);
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.input-container input {
+  margin-top: 10px;
+  width: 286px;
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.auth-container {
+  background-image: url("/images/bg.png");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: 100%;
+  color: #294b53;
+  background-position: 0% 100%;
+}
+
+.input-container {
+  margin: 25px 0;
+  color: #ff9c6e;
+}
+
+.login-prompt a,
+.signup-prompt a {
+  color: #ff9c6e;
+  text-decoration: none;
+}
+
+.login-prompt p,
+.signup-prompt p {
+  margin-bottom: 3px;
+}
+
+.login-prompt a:hover,
+.signup-prompt a:hover {
+  font-weight: 800;
+}
+
+.login-prompt,
+.signup-prompt {
+  text-align: center;
+  color: #294b53;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.submit-btn-container {
+  text-align: center;
+}
 .submit-btn {
-    margin: 5px;
-    text-align: center;
-    color: white;
-    background: #ff9c6e;
-    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-    border-radius: 2px;
-    border-color: #ff9c6e;
-    width: 174px;
-    padding: 5px 16px;
+  margin-top: 10px;
+  color: white;
+  background: #ff9c6e;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 2px;
+  border-color: #ff9c6e;
+  width: 174px;
+  padding: 5px 16px;
 }
 
-/* input[type="file"] {
-    display: none;
-}
-
-
-.custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-} */
-
-input,
-select {
-    display: flex;
-    margin-top: 4px;
-    width: 286px;
-    padding: 8px 12px;
-    border: 1px solid #d9d9d9;
-    box-sizing: border-box;
-    border-radius: 2px;
-}
-
-form {
-    margin: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #294b53;
-
-}
-
-h1 {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 800;
-    text-align: center;
-    margin: 50px;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 0;
-    padding-bottom: 0;
-
-}
-
-
-
-
-label.myLabel input[type="file"] {
-    position:absolute;
-    top: -1000px;
-}
-
-/***** Example custom styling *****/
-.myLabel {
-    border: 2px solid #AAA;
-    border-radius: 4px;
-    padding: 7px 25px;
-    margin: 10px;
-    background: #DDD;
-    display: inline-block;
-}
-.myLabel:hover {
-    background: #CCC;
-}
-.myLabel:active {
-    background: #CCF;
-}
-.myLabel :invalid + span {
-    color: #A44;
-}
-.myLabel :valid + span {
-    color: #294B53;
+.submit-btn:hover {
+  color: #ff9c6e;
+  background: #294b53;
+  border-color: #294b53;
+  transition: ease-in-out;
 }
