@@ -21,7 +21,11 @@ router.get("/signup", isNotLoggedIn, (req, res) => {
 });
 
 router.post("/signup", (req, res, next) => {
-  const { username, email, password } = req.body;
+  const {
+    username,
+    email,
+    password
+  } = req.body;
 
   if (
     !username ||
@@ -39,8 +43,8 @@ router.post("/signup", (req, res, next) => {
   }
 
   User.findOne({
-    username,
-  })
+      username,
+    })
     .then((user) => {
       if (user) {
         res.render("pages/auth/signup", {
@@ -53,14 +57,14 @@ router.post("/signup", (req, res, next) => {
       const hashPassword = bcrypt.hashSync(password, salt);
 
       User.create({
-        username,
-        email,
-        password: hashPassword,
-      })
+          username,
+          email,
+          password: hashPassword,
+        })
         .then(() => {
           User.findOne({
-            username: username,
-          })
+              username: username,
+            })
             .then((user) => {
               req.session.currentUser = user;
               if (user) {
@@ -89,7 +93,10 @@ router.get("/login", isNotLoggedIn, (req, res) => {
 
 router.post("/login", (req, res) => {
   //GET VALUES FROM FORM
-  const { username, password } = req.body;
+  const {
+    username,
+    password
+  } = req.body;
 
   //VALIDATE INPUT
   if (!username || username === "" || !password || password === "") {
@@ -100,8 +107,8 @@ router.post("/login", (req, res) => {
   }
 
   User.findOne({
-    username,
-  })
+      username,
+    })
     .then((user) => {
       if (!user) {
         res.render("pages/auth/login", {
@@ -128,7 +135,6 @@ router.post("/login", (req, res) => {
 
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
-    console.log(req.session);
     if (err) {
       res.render("error", {
         errorMessage: "Something went wrong! Yikes!",

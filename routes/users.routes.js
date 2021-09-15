@@ -27,7 +27,6 @@ router.get("/:id/edit", (req, res) => {
 
   User.findById(id)
     .then((user) => {
-      console.log(user);
       res.render("pages/user/edit-profile", {
         user,
         style: "Profile/edit-profile.css"
@@ -59,7 +58,7 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
   ) {
     res.render("pages/auth/signup", {
       errorMessage: "Username and password are required",
-      style: "error.css"
+      style: "Login-Signup/auth.css"
     });
   }
 
@@ -76,7 +75,7 @@ router.post("/:id/edit", fileUploader.single("avatarUrl"), (req, res) => {
     .catch((error) =>
       res.render("pages/auth/signup", {
         errorMessage: error,
-        style: "error.css"
+        style: "Login-Signup/auth.css"
       })
     );
 });
@@ -86,10 +85,9 @@ router.get("/profile", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
     User.findById(req.session.currentUser._id).then((user) => {
       let pictureUrl = user.avatarUrl
-      if(!user.avatarUrl){
+      if (!user.avatarUrl) {
         pictureUrl = "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png"
       }
-      console.log("The user:", user);
       res.render("pages/user/profile", {
         user,
         pictureUrl,

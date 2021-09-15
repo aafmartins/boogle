@@ -83,11 +83,9 @@ footer {
 #navbarContainer {
   height: 80px;
   /* margin: 0px 20px 0px 20px; */
-  background: linear-gradient(
-      0deg,
+  background: linear-gradient(0deg,
       rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)
-    ),
+      rgba(255, 255, 255, 0.4)),
     #e9e8e1;
 }
 
