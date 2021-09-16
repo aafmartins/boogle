@@ -14,28 +14,28 @@
 </header>
 
 <!---earch bar-->
-<div class="mainFormContainer">
-  <form action="/search/book-search" method="GET">
-    <div class="formInputsContainer">
-      <div class="formInputs">
+<div class=".container-fluid formInputsContainer">
+  <form class="row" action="/search/book-search" method="GET">
+    {{!-- <div class=" row "> --}}
+      <div class=" col-sm">
         <label for="author">Search by Author:</label>
-        <input type="text" name="author" placeholder="Author" id="author" />
+        <input type="text" name="author" placeholder="&#x1F50D Author" id="author" />
       </div>
 
-      <div class="formInputs">
+      <div class=" col-sm">
         <label for="title">Search by Title: </label>
-        <input type="text" name="title" placeholder="Book title" />
+        <input type="text" name="title" placeholder="&#x1F50D Book title" id="title" />
       </div>
 
-      <div class="formInputs">
-        <label for="generic">Search Generic:</label>
-        <input type="text" name="generic" placeholder="Generic" id="generic" />
+      <div class=" col-sm">
+        <label for="generic">Search by Keyword:</label>
+        <input type="text" name="generic" placeholder="&#x1F50D Keyword" id="generic" />
       </div>
 
-      <div class="formInputs">
+      <div class=" col-sm">
         <label for="genre">Pick by Genre:</label>
         <select name="genre" id="genre">
-          <option disable selected value="">Select a genre from the list</option>
+          <option disable selected value="">&#x1F50D Select a genre from the list</option>
           <option value="adventure">Adventure</option>
           <option value="art">Art</option>
           <option value="bio">Biography</option>
@@ -54,10 +54,11 @@
         </select>
       </div>
 
-      <div class="formInputs">
+      <div class="col-sm">
         <button class="search-btn" type="submit">Search</button>
       </div>
-    </div>
+        
+    {{!-- </div> --}}
   </form>
 </div>
 
@@ -67,7 +68,7 @@
     <img class="Signup-image" src="images/reading.png" alt="Sign-up Image" />
   </div>
   <div class="Signup-right-side">
-    <h1 class="H1-Signup">create your very own <br /> personal bookshelf</h1>
+    <h1 class="H1-Signup">Create your very own <br /> personal bookshelf</h1>
     <h5 class="H5-Signup">Join for free to save your favorite books!</h5>
     <a href="/auth/signup"><button class="Signup-button">Sign up</button></a>
   </div>

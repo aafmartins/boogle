@@ -14,118 +14,121 @@ body {
   font: 14px "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
+  min-height: 100%;
 }
 
+/* FOOTER */
 footer {
-  height: 250px;
+  clear: both;
+  position: relative;
+  /* height: 200px; */
+  margin-top: 0px;
+  color: white;
+  background-color: #294B53;
 }
 
 .footer-container {
   display: flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: stretch;
   justify-content: space-around;
-  align-items: stretch;
-  background-color: #294b53;
-  padding-bottom: 0px;
-}
-
-.H2Footer {
-  font-size: 20px;
-  line-height: 28px;
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-top: 50px;
-}
-
-.pFooter {
-  color: white;
-  font-style: normal;
-  margin-top: 10px;
+  align-items: center;
+  padding: 20px;
 }
 
 .logoFooter {
-  height: 40px;
-  margin-top: 50px;
+  width: 50px;
 }
 
 .ironhackFooter {
-  height: 60px;
-  margin-top: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  width: 50px;
+}
+
+.H2Footer {
+  font-size: 21px;
 }
 
 .aFooter {
   color: white;
   text-decoration: none;
+
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
 }
 
 .aFooter:hover {
   color: #ff9c6e;
 }
 
-.navbar-brand {
-  margin-left: 15px;
+.footer-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
+
+
+
+
+/* NAVBAR */
 #navbarContainer {
   display: flex;
   height: 80px;
   height: 80px;
-  /* margin: 0px 20px 0px 20px; */
-  background: #fbfaf9;
+  padding: 20px;
   justify-content: space-between;
+  color: #294B53;
+}
+
+.navbar-brand {
+  color: #294B53;
+}
+
+.navbar-brand:hover {
+  color: #294B53;
 }
 
 #boogleLogo {
   height: 50px;
-  /* margin-right: 100px; */
-  /* margin-left: 25px; */
-  /* margin-left: 140px; */
+  margin-right: 140px;
+}
+
+#boogleLogoAno {
+  height: 50px;
+  margin-right: 62px;
 }
 
 #navbarText {
-  justify-content: space-between;
-  list-style-type: none;
+  /* justify-content: space-between; */
+  /* list-style-type: none; */
   color: #294b53;
 }
 
 #nav-links {
   display: flex;
+  /* width: 177px; */
 }
 
 a:hover {
   text-decoration: none;
 }
 
+
+
 .navbarBtn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 16px;
-  /* position: static; */
-  width: auto;
-  height: 40px;
-  /* left: 84px;
-    top: 16px; */
-  background: #294b53;
-  border: 1px solid #1890ff;
-  box-sizing: border-box;
-  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-  border-radius: 2px;
-  font-size: 16px;
-  line-height: 24px;
   text-align: center;
-  color: #ffffff;
-  /* margin: 10px; */
+  color: white;
+  background: #ff9c6e;
+  border-radius: 2px;
+  border: none;
+  padding: 5px 16px;
+}
+
+.navbarBtn:hover {
+  background: #294b53;
+  border-color: #294b53;
+  transition: ease-in-out;
 }
 
 #button {
@@ -140,28 +143,35 @@ h1 {
 
 .houseImage {
   width: 40px;
-  /* margin-left: 25px; */
 }
 
 .profileImage {
-  /* height: 30px; */
   width: 30px;
 }
 
 .bookImage {
-  /* height: 30px; */
   width: 40px;
   margin: 0px 5px 0px 5px;
 }
 
 .nav-logos {
   display: flex;
-  margin: 0px 5px 0px 5px;
   align-items: center;
+  flex-direction: row;
 }
 
 ul {
   list-style-type: none;
-  margin: none;
-  padding: none;
+  margin: 0;
+  padding: 0;
 }
+
+
+/* @media (max-width: 654px) {
+  .col-sm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+} */
