@@ -77,18 +77,20 @@ router
 //THIS GET METHOD DISPLAYS PROFILE
 router.get("/profile", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
-    User.findById(req.session.currentUser._id).then((user) => {
-      let pictureUrl = user.avatarUrl;
-      if (!user.avatarUrl) {
-        pictureUrl =
-          "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png";
-      }
-      res.render("pages/user/profile", {
-        user,
-        pictureUrl,
-        style: "Profile/profile.css",
-      });
-    });
+    User.findById(req.session.currentUser._id)
+      .then((user) => {
+        let pictureUrl = user.avatarUrl;
+        if (!user.avatarUrl) {
+          pictureUrl =
+            "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png";
+        }
+        res.render("pages/user/profile", {
+          user,
+          pictureUrl,
+          style: "Profile/profile.css",
+        });
+      })
+      .catch((err) => console.log(err));
   } else res.redirect("/");
 });
 

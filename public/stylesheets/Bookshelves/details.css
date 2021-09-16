@@ -1,19 +1,20 @@
 .mainContainer {
-  margin: 120px 200px 40px 200px;
+  margin: 150px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: stretch;
   padding: 16px;
   color: #294b53;
-  background: linear-gradient(0deg,
+  background: linear-gradient(
+      0deg,
       rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)),
+      rgba(255, 255, 255, 0.8)
+    ),
     #e9e8e1;
-  min-width: 700px;
+  width: 900px;
   line-height: 1.5;
 }
-
 
 .details-heading {
   display: flex;
@@ -83,9 +84,9 @@
   background: #ff9c6e;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
   border-radius: 2px;
-  border-color: #ff9c6e;
+  border: 1px solid #ffd8bf;
+  padding: 10px 20px;
   width: 100px;
-  padding: 5px 16px;
 }
 
 .dlt-btn:hover,
