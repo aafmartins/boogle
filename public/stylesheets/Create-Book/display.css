@@ -4,12 +4,14 @@ body {
 }
 
 .new-book-container {
-  margin-top: 120px;
+  margin-top: 200px;
+  height: 70vh;
 }
 
 .form-container {
   margin: 20px 0;
 }
+
 .submit-btn {
   margin-top: 10px;
   text-align: center;
@@ -79,11 +81,11 @@ label.myLabel input[type="file"] {
   background: #ccf;
 }
 
-.myLabel :invalid + span {
+.myLabel :invalid+span {
   color: #294b53;
 }
 
-.myLabel :valid + span {
+.myLabel :valid+span {
   color: #ff9c6e;
 }
 

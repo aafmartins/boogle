@@ -30,6 +30,8 @@ router.get("/book-search", (req, res, next) => {
     "art",
     "detective",
     "sad",
+    "haruki",
+    "agatha"
   ];
   let randomWord = listOfWords[Math.floor(Math.random() * listOfWords.length)];
 

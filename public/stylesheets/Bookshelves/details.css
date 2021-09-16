@@ -6,15 +6,14 @@
   align-items: stretch;
   padding: 16px;
   color: #294b53;
-  background: linear-gradient(
-      0deg,
+  background: linear-gradient(0deg,
       rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
+      rgba(255, 255, 255, 0.8)),
     #e9e8e1;
   min-width: 700px;
   line-height: 1.5;
 }
+
 
 .details-heading {
   display: flex;

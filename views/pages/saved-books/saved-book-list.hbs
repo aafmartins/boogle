@@ -20,6 +20,12 @@
   </div>
 </div>
 
+{{#unless result}}
+<div class="nothing-here-container">
+<h1>You have no saved books yet...</h1>
+</div>
+{{/unless}}
+
 <ul>
   {{#each result}}
     <li>

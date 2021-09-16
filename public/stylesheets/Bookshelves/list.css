@@ -1,9 +1,7 @@
 body {
-  background: linear-gradient(
-      0deg,
+  background: linear-gradient(0deg,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.6)
-    ),
+      rgba(255, 255, 255, 0.6)),
     #e9e8e1;
   margin: 0;
   padding: 0;
@@ -22,6 +20,14 @@ li {
 
 .headerImage {
   height: 250px;
+}
+
+
+.nothing-here-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mainContainer {
@@ -55,6 +61,7 @@ li {
 .imageContainer img {
   height: 250px;
 }
+
 .detailsContainer {
   display: flex;
   flex-direction: column;
