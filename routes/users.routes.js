@@ -36,7 +36,11 @@ router
   })
   //THIS POST RECEIVES INFORMATION FROM FORM AND UPDATES USER
   .post(fileUploader.single("avatarUrl"), (req, res) => {
-    const { username, email, password } = req.body;
+    const {
+      username,
+      email,
+      password
+    } = req.body;
     const avatarUrl = req.file.path;
 
     if (
@@ -58,13 +62,12 @@ router
     const hashPassword = bcrypt.hashSync(password, salt);
 
     User.findByIdAndUpdate(req.params.id, {
-      username,
-      email,
-      password: hashPassword,
-      avatarUrl:
-        avatarUrl ||
-        "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png",
-    })
+        username,
+        email,
+        password: hashPassword,
+        avatarUrl: avatarUrl ||
+          "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png",
+      })
       .then(() => res.redirect("/users/profile"))
       .catch((error) =>
         res.render("pages/auth/signup", {
@@ -77,6 +80,7 @@ router
 //THIS GET METHOD DISPLAYS PROFILE
 router.get("/profile", isLoggedIn, (req, res) => {
   if (req.session.currentUser) {
+    // console.log(window.location)
     User.findById(req.session.currentUser._id)
       .then((user) => {
         let pictureUrl = user.avatarUrl;

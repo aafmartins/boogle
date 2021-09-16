@@ -50,6 +50,13 @@ module.exports = (app) => {
       return string.replace(/<.{0,2}>/g, "");
     }
   });
+  hbs.registerHelper("cleanAndSliceDescription", function (string) {
+    if (string) {
+      let cleanString = string.replace(/<.{0,2}>/g, "")
+      let slicedString = cleanString.split(/\s+/).slice(0, 15).join(" ") + "..."
+      return slicedString
+    }
+  });
 
   // Handles access to the public folder
   app.use(express.static(path.join(__dirname, "..", "public")));

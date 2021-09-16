@@ -8,12 +8,12 @@
 
   <div class="buttonContainer">
     <a href="/bookshelf/my-saved-books">
-      <button class="navigatingBtn">
+      <button class="navigatingBtn" id="mySavedBooksBtnInCreatedBook">
         My Saved Books
       </button>
     </a>
     <a href="/bookshelf/my-created-books">
-      <button class="navigatingBtn">
+      <button disabled class="navigatingBtn " id="myCreatedBooksBtnInCreatedBook">
         My Created Books
       </button>
     </a>
@@ -23,8 +23,19 @@
 {{#unless result}}
 <div class="nothing-here-container">
 <h1>You have not created any books yet...</h1>
+ <a href="/books/new-book">
+        <button class="create-btn">
+          Create a new book
+        </button>
+      </a>
 </div>
 {{/unless}}
+
+    {{!-- <a href="/books/new-book">
+        <button class="create-btn-list">
+          Create new book
+        </button>
+      </a> --}}
 
   <ul>
     {{#each result}}

@@ -33,7 +33,10 @@
 
   <div class="detailsContainer">
     <h2>{{book.title}}</h2>
-    <h4 class="author">{{book.authors}}</h4>
+    {{!-- <h4 class="author">{{book.authors}}</h4> --}}
+      <a href="/search/book-search?author={{book.authors}}&title=&generic=&genre=">
+          {{book.authors}}
+        </a>
     <p class="description">{{cleanDescription book.description}}</p>
     <ul>
       Categories:

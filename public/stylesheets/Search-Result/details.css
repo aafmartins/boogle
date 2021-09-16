@@ -5,12 +5,7 @@
   align-items: center;
   padding: 16px;
   color: #294b53;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    #e9e8e1;
+  background-color: #e5e5e5;
   max-width: 900px;
   line-height: 1.5;
 }
