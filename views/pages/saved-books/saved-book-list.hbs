@@ -8,11 +8,11 @@
 
   <div class="buttonContainer">
     <a href="/bookshelf/my-saved-books">
-      <button class="navigatingBtn">
+      <button disabled class="navigatingBtn" id="mySavedBooksBtnInSavedBook">
         My Saved Books
       </button>
     </a>
-    <a href="/bookshelf/my-created-books">
+    <a href="/bookshelf/my-created-books" id="myCreatedBooksBtnInSavedBook">
       <button class="navigatingBtn">
         My Created Books
       </button>
@@ -40,7 +40,7 @@
             {{this.authors}}
           </h4>
           <a class="viewMoreBtn-container" href="/my-saved-books/{{this._id}}">
-            <button class="viewMoreBtn">
+            <button  class="viewMoreBtn">
               Read More
             </button>
           </a>

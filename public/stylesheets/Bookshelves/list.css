@@ -1,20 +1,18 @@
 body {
-  background: linear-gradient(
-      0deg,
+  background: linear-gradient(0deg,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.6)
-    ),
+      rgba(255, 255, 255, 0.6)),
     #e9e8e1;
   margin: 0;
   padding: 0;
 }
 
-.ulInSavedBook {
+/* .ulInSavedBook {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 li {
   list-style: none;
@@ -27,12 +25,39 @@ li {
 .nothing-here-container {
   height: 80vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.create-btn,
+.create-btn-list {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  background: #ff9c6e;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 2px;
+  border: 1px solid #ffd8bf;
+  padding: 20px 30px;
+  font-size: 20px;
+}
+
+.create-btn:hover,
+.create-btn-list:hover {
+  background: #294b53;
+  border-color: #294b53;
+  color: #ff9c6e;
+  transition: ease-in-out;
+}
+
+.create-btn-list {
+  margin: 100px auto;
+  display: block;
+}
+
 .mainContainer {
-  margin: 120px auto;
+  margin: 100px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -129,7 +154,6 @@ a {
   border-radius: 2px;
   flex: none;
   flex-grow: 0;
-  margin: 16px 0px;
   text-align: center;
   color: #ffffff;
 }
@@ -141,3 +165,14 @@ a {
 .buttonContainer {
   display: flex;
 }
+
+.disableButton {
+  background-color: gray;
+}
+
+
+/* .disableButton {
+  background-color: #fff2e8;
+  border: 1px solid #fff2e8;
+  color: #ff9c6e;
+} */

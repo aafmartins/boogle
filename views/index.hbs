@@ -62,7 +62,49 @@
   </form>
 </div>
 
-<!---ewsletter-->
+<ul class="results-list-container">
+{{#each latestBooks}}
+    {{!-- {{#each books.data.items}} --}}
+      {{#if this.description}}
+        <div class="results-item-container">
+          <li>
+            <div class="container-heading">
+              <div class="cover-img">
+                <img src="{{this.bookPictureUrl}}" alt="" />
+              </div>
+              {{!-- <div class="details-link-container">
+                <a href="/search/book-search?author=&title={{this.title}}&generic=&genre=">
+                  <button class="details-link">Find more</button>
+                </a>
+              </div> --}}
+            </div>
+
+            <div class="title">
+              <a href="/search/book-search?author=&title={{this.title}}&generic=&genre=">
+              <h5 class="upper-case">{{this.title}}</h5>
+              </a>
+            </div>
+
+            {{#each this.authors}}
+              <span class="author">
+                <span class="upper-case">{{this}}</span>
+                <span class="ghost">_</span>
+              </span>
+            {{/each}}
+
+            {{#if this.description}}
+            {{!-- {{cleanDescription this.description}} --}}
+              <div class="description">
+                <p> {{cleanAndSliceDescription this.description}}</p>
+              </div>
+            {{/if}}
+
+          </li>
+        </div>
+      {{/if}}
+  {{/each}}
+  </ul>
+<!---newsletter-->
 <div class="Signup-container">
   <div class="Signup">
     <img class="Signup-image" src="images/reading.png" alt="Sign-up Image" />

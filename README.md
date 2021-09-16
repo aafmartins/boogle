@@ -35,7 +35,7 @@ Book-search-results - As a user you want to be able to search for a book and acc
 6. External API
 7. Log-in/log-out/Sign-up
 8. Edit, add, delete options
-9. Seach bar
+9. Search bar
 
 ## BACKLOG
 
@@ -51,6 +51,8 @@ Book-search-results - As a user you want to be able to search for a book and acc
 7. See friends profiles
 8. Add NPM Flash (Error page that makes sense e.g.)
 9. Get a message to create a profile to create/save books
+10. Add category with latest added books homepage
+11. Create nice looking error pages
 
 ## ROUTES
 
@@ -96,26 +98,22 @@ Book-search-results - As a user you want to be able to search for a book and acc
 ## MODELS
 
 1. CreateBook
-   title: String
-   authors: [String]
-   publishedDate: Date
-   description: String
-   bookPictureUrl: String
-   pageCount: Number
-   categories: [String]
-   maturityRating: String
-   user: Schema.Types.ObjectId
+  title: String,
+  authors: [String],
+  publishedDate: String,
+  description: String,
+  bookPictureUrl: String,
+  pageCount: Number,
+  categories: [String],
 
 2. SavedBook
-   title: String
-   authors: [String]
-   publishedDate: Date
-   description: String
-   bookPictureUrl: String
-   pageCount: Number
-   categories: [String]
-   maturityRating: String
-   user: Schema.Types.ObjectId
+    title: String,
+    authors: [String],
+    publishedDate: String,
+    description: String,
+    bookPictureUrl: String,
+    pageCount: Number,
+    categories: [String],
 
 3. User
    username: string
@@ -133,6 +131,6 @@ Link to Figma: https://www.figma.com/file/kI97V1jQGciUDm7ivvijaz/Web-Dev-Collabo
 
 Link to flowchart: https://excalidraw.com/
 
-Link to the application:
+Link to the application: https://globtrottersboogle.herokuapp.com/
 
-Link to the presentation:
+Link to the presentation: https://docs.google.com/presentation/d/14bxnqmi3BRrRYGN0RtPpB7vJc9V4t52ri1GdBaMtNZw/edit?usp=sharing

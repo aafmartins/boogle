@@ -6,12 +6,7 @@
   align-items: stretch;
   padding: 16px;
   color: #294b53;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    #e9e8e1;
+  background-color: #e5e5e5;
   width: 900px;
   line-height: 1.5;
 }
@@ -45,6 +40,18 @@
 .detailsContainer {
   align-items: flex-start;
   padding: 32px 16px;
+}
+
+.detailsContainer a {
+  text-decoration: none;
+  color: #ff9c6e;
+  font-weight: 500;
+  margin-left: 0;
+  text-transform: uppercase;
+}
+
+.detailsContainer a:hover {
+  font-weight: 800;
 }
 
 .detailsContainer ul {
@@ -194,4 +201,3 @@ h5 {
   line-height: 24px;
   flex: none;
 } */
-
