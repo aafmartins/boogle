@@ -1,5 +1,47 @@
 <div class="mainContainer">
 
+  <div class="details-heading">
+    <div class="cover-data-container">
+      <div class="search-details-cover-container">
+        <img src="{{book.bookPictureUrl}}" alt="" />
+      </div>
+      <div class="book-data-container">
+        <p>Published in {{book.publishedDate}}</p>
+        <p>{{book.pageCount}} pages</p>
+      </div>
+    </div>
+    <div class="links-container">
+      <div class="dlt-btn-container">
+        <a href="/my-saved-books/{{book._id}}/delete">
+          <button class="dlt-btn" type="submit">Delete</button>
+        </a>
+      </div>
+      <div class="back-btn-container">
+        <a href="/bookshelf/my-saved-books">
+          <button class="back-btn" type="submit">Back</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="detailsContainer">
+    <h2>{{book.title}}</h2>
+    <h4 class="author">{{book.authors}}</h4>
+    <p class="description">{{cleanDescription book.description}}</p>
+    <ul>
+      Categories:
+      {{#each book.categories}}
+        <li>
+          {{this}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+</div>
+
+{{!-- <div class="mainContainer">
+
   <div class="imageContainer">
     <img class="details-book-cover" src="{{book.bookPictureUrl}}" />
   </div>
@@ -44,4 +86,4 @@
 
   </div>
 
-</div>
+</div> --}}

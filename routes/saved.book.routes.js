@@ -19,7 +19,7 @@ router.get("/:id", (req, res) => {
     .then((book) => {
       res.render("pages/saved-books/saved-book-details", {
         book: book,
-        style: "Bookshelves/details.css"
+        style: "Bookshelves/details.css",
       });
     })
     .catch((err) => console.log(err));

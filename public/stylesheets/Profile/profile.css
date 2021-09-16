@@ -1,4 +1,64 @@
-body {
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  background-image: url("/images/bg.png");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: 100%;
+  color: #294b53;
+  background-position: 0% 100%;
+}
+
+.profile-picture {
+  height: 200px;
+}
+
+.profile-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 120px;
+  background-color: rgba(248, 249, 250, 0.8);
+  padding: 30px;
+  border-radius: 4px;
+  max-width: 400px;
+  max-height: 500px;
+}
+
+.profile-info-container div {
+  margin: 5px;
+}
+.profile-btn {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  background: #ff9c6e;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 2px;
+  border-color: #ff9c6e;
+  padding: 10px 20px;
+}
+
+.profile-btn:hover {
+  background: #294b53;
+  border-color: #294b53;
+  color: #ff9c6e;
+  transition: ease-in-out;
+}
+
+#logout-btn {
+  background: #294b53;
+  border-color: #294b53;
+}
+
+#logout-btn:hover {
+  background: #ff9c6e;
+  border-color: #ff9c6e;
+  color: white;
+}
+
+/* body {
   background-color: #ffffff;
 }
 
@@ -58,12 +118,7 @@ a {
   justify-content: center;
   align-items: center;
   padding: 8px 16px;
-  /* position: static; */
-  /* width: 140px;
-  height: 40px; */
   width: auto;
-  /* left: 84px;
-    top: 16px; */
   background: #294b53;
   border: 1px solid #294b53;
   box-sizing: border-box;
@@ -83,9 +138,6 @@ a {
 h2 {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 800;
-  /* font-size: 30px; */
-  /* line-height: 40px; */
-  /* flex: none; */
 }
 
 h4 {
@@ -110,7 +162,6 @@ h1 {
 }
 
 .submit-btn {
-  /* margin: 5px; */
   text-align: center;
   color: white;
   background: #ff9c6e;
@@ -119,4 +170,4 @@ h1 {
   border-color: #ff9c6e;
   width: auto;
   padding: 5px 16px;
-}
+} */

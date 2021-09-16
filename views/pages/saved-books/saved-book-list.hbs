@@ -1,8 +1,11 @@
 <div class="headerImageContainer">
+
   <div>
     <img class="headerImage" src="/images/reading.png" alt="" />
   </div>
+
   <h1>My Saved Books List</h1>
+
   <div class="buttonContainer">
     <a href="/bookshelf/my-saved-books">
       <button class="navigatingBtn">
@@ -17,10 +20,11 @@
   </div>
 </div>
 
-<ul class="ulInSavedBook">
+<ul>
   {{#each result}}
     <li>
       <div class="mainContainer">
+
         <div class="detailsContainer">
           <h2>
             {{this.title}}
@@ -29,8 +33,8 @@
           <h4>
             {{this.authors}}
           </h4>
-          <a class="viewMoreBtn" href="/my-saved-books/{{this._id}}">
-            <button class="navigatingBtn">
+          <a class="viewMoreBtn-container" href="/my-saved-books/{{this._id}}">
+            <button class="viewMoreBtn">
               Read More
             </button>
           </a>

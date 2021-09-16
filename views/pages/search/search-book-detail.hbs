@@ -11,12 +11,20 @@
           <p>Published in {{book.publishedDate}}</p>
           <p>{{book.pageCount}} pages</p>
           <p>
-            {{book.industryIdentifiers.1.type}}:{{book.industryIdentifiers.1.identifier}}
+            {{book.industryIdentifiers.1.type}}
+            {{book.industryIdentifiers.1.identifier}}
           </p>
         </div>
       </div>
-      <div class="add-btn-container">
-        <button class="add-btn" type="submit">Add to Bookshelf</button>
+      <div>
+        <div class="add-btn-container">
+          <button class="add-btn" type="submit">Add to Bookshelf</button>
+        </div>
+        <div class="add-btn-container">
+          <a href="/">
+            <button class="add-btn">Back to search</button>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -25,15 +33,11 @@
         {{book.title}}
       </h1>
       {{#each book.authors}}
-        <a
-          class="navbar-brand"
-          href="/search/book-search?author={{this}}&title=&generic=&genre="
-        >
+        <a href="/search/book-search?author={{this}}&title=&generic=&genre=">
           {{this}}
         </a>
-        {{!-- <p class="author">{{this}}</p> --}}
       {{/each}}
-      <p>
+      <p class="description">
         {{cleanDescription book.description}}
       </p>
     </div>

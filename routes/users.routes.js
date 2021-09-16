@@ -21,7 +21,8 @@ router.get("/:id/delete", (req, res) => {
 });
 
 //EDIT BOOKS
-router.route("/:id/edit")
+router
+  .route("/:id/edit")
   //THIS GET METHOD RENDERS THE EDIT PROFILE
   .get((req, res) => {
     User.findById(req.params.id)
@@ -35,11 +36,7 @@ router.route("/:id/edit")
   })
   //THIS POST RECEIVES INFORMATION FROM FORM AND UPDATES USER
   .post(fileUploader.single("avatarUrl"), (req, res) => {
-    const {
-      username,
-      email,
-      password
-    } = req.body;
+    const { username, email, password } = req.body;
     const avatarUrl = req.file.path;
 
     if (
@@ -61,12 +58,13 @@ router.route("/:id/edit")
     const hashPassword = bcrypt.hashSync(password, salt);
 
     User.findByIdAndUpdate(req.params.id, {
-        username,
-        email,
-        password: hashPassword,
-        avatarUrl: avatarUrl ||
-          "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png",
-      })
+      username,
+      email,
+      password: hashPassword,
+      avatarUrl:
+        avatarUrl ||
+        "https://www.senertec.de/wp-content/uploads/2020/04/blank-profile-picture-973460_1280.png",
+    })
       .then(() => res.redirect("/users/profile"))
       .catch((error) =>
         res.render("pages/auth/signup", {

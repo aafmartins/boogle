@@ -35,11 +35,28 @@
 .search-details-container {
   align-items: flex-start;
   padding: 32px 16px;
-  text-align: justify;
 }
 
-.author {
+.search-details-container h1 {
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.search-details-container a {
+  text-decoration: none;
+  color: #ff9c6e;
   font-weight: 500;
+  margin-left: 0;
+  text-transform: uppercase;
+}
+
+.search-details-container a:hover {
+  font-weight: 800;
+}
+
+.description {
+  margin-top: 20px;
+  text-align: justify;
 }
 
 .add-btn-container {

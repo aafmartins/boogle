@@ -9,17 +9,24 @@
       {{#if this.volumeInfo.description}}
         <div class="results-item-container">
           <li>
-            <div class="cover-img">
-              <img src="{{this.volumeInfo.imageLinks.thumbnail}}" alt="" />
+            <div class="container-heading">
+              <div class="cover-img">
+                <img src="{{this.volumeInfo.imageLinks.thumbnail}}" alt="" />
+              </div>
+              <div class="details-link-container">
+                <a href="/search/{{this.id}}">
+                  <button class="details-link">Read more</button>
+                </a>
+              </div>
             </div>
 
             <div class="title">
-              <h5>{{this.volumeInfo.title}}</h5>
+              <h5 class="upper-case">{{this.volumeInfo.title}}</h5>
             </div>
 
             {{#each this.volumeInfo.authors}}
               <span class="author">
-                <span>{{this}}</span>
+                <span class="upper-case">{{this}}</span>
                 <span class="ghost">_</span>
               </span>
             {{/each}}
@@ -30,11 +37,6 @@
               </div>
             {{/if}}
 
-            <div class="details-link-container">
-              <a href="/search/{{this.id}}">
-                <button class="details-link">Read more</button>
-              </a>
-            </div>
           </li>
         </div>
       {{/if}}
