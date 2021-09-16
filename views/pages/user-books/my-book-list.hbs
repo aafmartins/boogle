@@ -24,23 +24,22 @@
   {{#each result}}
     <li>
       <div class="mainContainer">
+
+        <div class="imageContainer">
+          <img src="{{this.bookPictureUrl}}" alt="" />
+        </div>
+
         <div class="detailsContainer">
           <h2>{{this.title}}</h2>
-
           <h4>{{this.authors}}</h4>
-          <h5>{{this.description}}</h5>
-
-          <a class="viewMoreBtn" href="/books/{{this._id}}">
-            <button class="navigatingBtn">
+          {{!-- <p>{{this.description}}</p> --}}
+          <a class="viewMoreBtn-container" href="/books/{{this._id}}">
+            <button class="viewMoreBtn">
               Read More
             </button>
           </a>
-
         </div>
-        <div class="imageContainer">
-          <img src="{{this.bookPictureUrl}}" alt="" />
 
-        </div>
       </div>
     </li>
   {{/each}}

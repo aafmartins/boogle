@@ -31,6 +31,10 @@
   margin-bottom: 5px;
 }
 
+.title h5 {
+  font-size: 16px;
+}
+
 .results-item-container {
   display: flex;
   flex-direction: column;
@@ -46,7 +50,13 @@
     ),
     #e9e8e1;
   margin: 20px;
-  padding: 15px;
+  padding: 25px 30px;
+}
+
+.container-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .cover-img {
@@ -54,11 +64,13 @@
 }
 
 .cover-img img {
-  height: 150px;
+  height: 140px;
+  max-width: 120px;
 }
 
 .author {
   font-weight: 500;
+  font-size: 12px;
 }
 
 .ghost {
@@ -79,7 +91,6 @@
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
   border-radius: 2px;
   border-color: #ff9c6e;
-  margin-top: 20px;
   padding: 5px 16px;
 }
 
@@ -92,5 +103,6 @@
 
 .search-another-link-container {
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 40px;
 }
