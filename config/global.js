@@ -12,7 +12,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
 const hbs = require("hbs");
-
+const MONGO_URL = `${process.env.MONGODB_URI}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
@@ -68,7 +68,7 @@ module.exports = (app) => {
         maxAge: 24 * 60 * 60 * 1000,
       },
       store: MongoStore.create({
-        mongoUrl: "mongodb://localhost/boogle", // `${process.env.MONGODB_URI}/${process.env.DB_NAME}`
+        mongoUrl: MONGO_URL, // `${process.env.MONGODB_URI}/${process.env.DB_NAME}`
       }),
     })
   );
