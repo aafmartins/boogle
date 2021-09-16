@@ -78,6 +78,15 @@ footer {
   height: 80px;
   padding: 20px;
   justify-content: space-between;
+  color: #294B53;
+}
+
+.navbar-brand {
+  color: #294B53;
+}
+
+.navbar-brand:hover {
+  color: #294B53;
 }
 
 #boogleLogo {
@@ -157,8 +166,12 @@ ul {
   padding: 0;
 }
 
-/* .col-sm {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+/* @media (max-width: 654px) {
+  .col-sm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 } */
