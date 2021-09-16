@@ -1,5 +1,5 @@
 .search-details-main-container {
-  margin: 120px 200px 40px 200px;
+  margin: 120px auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11,7 +11,7 @@
       rgba(255, 255, 255, 0.8)
     ),
     #e9e8e1;
-  min-width: 700px;
+  max-width: 900px;
   line-height: 1.5;
 }
 
@@ -71,9 +71,9 @@
   background: #ff9c6e;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
   border-radius: 2px;
-  border-color: #ff9c6e;
-  width: 174px;
-  padding: 5px 16px;
+  padding: 10px 20px;
+  border: 1px solid #ffd8bf;
+  width: 170px;
 }
 
 .add-btn:hover {

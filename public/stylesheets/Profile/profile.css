@@ -29,6 +29,7 @@
 .profile-info-container div {
   margin: 5px;
 }
+
 .profile-btn {
   text-align: center;
   margin-top: 10px;
@@ -36,7 +37,7 @@
   background: #ff9c6e;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
   border-radius: 2px;
-  border-color: #ff9c6e;
+  border: 1px solid #ffd8bf;
   padding: 10px 20px;
 }
 
@@ -50,6 +51,7 @@
 #logout-btn {
   background: #294b53;
   border-color: #294b53;
+  padding: 8px 18px;
 }
 
 #logout-btn:hover {

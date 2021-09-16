@@ -8,7 +8,8 @@ const isNotLoggedIn = require("../middleware/isNotLoggedIn");
 
 //Create 5 routes: 2 for signup, 2 for login and 1 for logout
 
-router.route("/signup")
+router
+  .route("/signup")
   // THIS GET METHOD RENDERS THE SIGNUP PAGE IF USER IS NOT LOGGED IN
   .get(isNotLoggedIn, (req, res) => {
     res.render("pages/auth/signup", {
@@ -20,11 +21,7 @@ router.route("/signup")
   // AND CREATES A NEW USER
   // IT ALSO CREATES A HASHED PASSWORD AND CHECKS IF THE INPUTS ARE CORRECT
   .post((req, res, next) => {
-    const {
-      username,
-      email,
-      password
-    } = req.body;
+    const { username, email, password } = req.body;
 
     if (
       !username ||
@@ -42,8 +39,8 @@ router.route("/signup")
     }
 
     User.findOne({
-        username,
-      })
+      username,
+    })
       .then((user) => {
         if (user) {
           res.render("pages/auth/signup", {
@@ -56,14 +53,14 @@ router.route("/signup")
         const hashPassword = bcrypt.hashSync(password, salt);
 
         User.create({
-            username,
-            email,
-            password: hashPassword,
-          })
+          username,
+          email,
+          password: hashPassword,
+        })
           .then(() => {
             User.findOne({
-                username: username,
-              })
+              username: username,
+            })
               .then((user) => {
                 req.session.currentUser = user;
                 if (user) {
@@ -82,8 +79,8 @@ router.route("/signup")
       .catch((error) => next(error));
   });
 
-
-router.route("/login")
+router
+  .route("/login")
   // THIS GET METHOD RENDERS THE LOGIN PAGE IF USER IS NOT LOGGED IN
   .get(isNotLoggedIn, (req, res) => {
     let currentUser = req.session.currentUser;
@@ -94,22 +91,19 @@ router.route("/login")
   })
   // THIS POST METHOD RECEIVES INFORMATION FROM THE LOGIN FORM
   .post((req, res) => {
-    const {
-      username,
-      password
-    } = req.body;
+    const { username, password } = req.body;
 
     //VALIDATE INPUT
     if (!username || username === "" || !password || password === "") {
       res.render("pages/auth/signup", {
-        errorMessage: "Something went wrong",
+        errorMessage: "Something went wrong!",
         style: "Login-Signup/auth.css",
       });
     }
 
     User.findOne({
-        username,
-      })
+      username,
+    })
       .then((user) => {
         if (!user) {
           res.render("pages/auth/login", {
@@ -118,7 +112,10 @@ router.route("/login")
           });
         } else {
           const encryptedPassword = user.password;
-          const passwordCorrect = bcrypt.compareSync(password, encryptedPassword);
+          const passwordCorrect = bcrypt.compareSync(
+            password,
+            encryptedPassword
+          );
 
           if (passwordCorrect) {
             req.session.currentUser = user;
@@ -138,7 +135,7 @@ router.route("/login")
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
-      res.render("error", {
+      res.render("pages/auth/login", {
         errorMessage: "Something went wrong! Yikes!",
         style: "Login-Signup/auth.css",
       });
