@@ -20,27 +20,32 @@
   </div>
 </div>
 
-<ul>
-  {{#each result}}
-    <li>
-      <div class="mainContainer">
+{{#unless result}}
+<div class="nothing-here-container">
+<h1>You have not created any books yet...</h1>
+</div>
+{{/unless}}
 
-        <div class="imageContainer">
-          <img src="{{this.bookPictureUrl}}" alt="" />
+  <ul>
+    {{#each result}}
+      <li>
+        <div class="mainContainer">
+  
+          <div class="imageContainer">
+            <img src="{{this.bookPictureUrl}}" alt="" />
+          </div>
+  
+          <div class="detailsContainer">
+            <h2>{{this.title}}</h2>
+            <h4>{{this.authors}}</h4>
+            <a class="viewMoreBtn-container" href="/books/{{this._id}}">
+              <button class="viewMoreBtn">
+                Read More
+              </button>
+            </a>
+          </div>
+  
         </div>
-
-        <div class="detailsContainer">
-          <h2>{{this.title}}</h2>
-          <h4>{{this.authors}}</h4>
-          {{!-- <p>{{this.description}}</p> --}}
-          <a class="viewMoreBtn-container" href="/books/{{this._id}}">
-            <button class="viewMoreBtn">
-              Read More
-            </button>
-          </a>
-        </div>
-
-      </div>
-    </li>
-  {{/each}}
-</ul>
+      </li>
+    {{/each}}
+  </ul>
