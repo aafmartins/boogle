@@ -8,7 +8,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding-top: 80px;
+  padding-top: 20px;
   padding-bottom: 30px;
   margin-top: 100px;
 }
@@ -17,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-bottom: 40px;
 }
 
 .H1-hero {
@@ -291,4 +292,8 @@ select {
   text-align: justify;
   font-kerning: 1px;
   margin-top: 10px;
+}
+
+.col {
+  width: 100%;
 }
