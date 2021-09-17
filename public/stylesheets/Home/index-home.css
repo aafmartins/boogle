@@ -292,3 +292,7 @@ select {
   font-kerning: 1px;
   margin-top: 10px;
 }
+
+.col {
+  width: 100%;
+}
