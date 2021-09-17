@@ -22,20 +22,13 @@
 
 {{#unless result}}
 <div class="nothing-here-container">
-<h1>You have not created any books yet...</h1>
- <a href="/books/new-book">
-        <button class="create-btn">
-          Create a new book
-        </button>
-      </a>
+<h3>You have not created any books yet...</h3>
 </div>
 {{/unless}}
 
-    {{!-- <a href="/books/new-book">
-        <button class="create-btn-list">
-          Create new book
-        </button>
-      </a> --}}
+    <a href="/books/new-book">
+        <button class="create-btn">Create a book!</button>
+    </a>
 
   <ul>
     {{#each result}}

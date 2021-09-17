@@ -10,12 +10,11 @@ router.get("/", function (req, res, next) {
     .sort({
       createdAt: -1
     })
-    .limit(8)
+    .limit(11)
     .then((latestBooks) => {
       User.find()
         .then((users) => {
           res.render("index", {
-            // title: "Boogle",
             users: users,
             latestBooks,
             style: "Home/index-home.css",

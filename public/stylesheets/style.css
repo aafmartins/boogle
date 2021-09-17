@@ -14,68 +14,7 @@ body {
   font: 14px "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  /* min-height: 100%; */
 }
-
-/* FOOTER */
-footer {
-  clear: both;
-  position: relative;
-  /* height: 200px; */
-  margin-top: 0px;
-  color: white;
-  background-color: #294B53;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px;
-}
-
-.logoFooter {
-  width: 50px;
-  margin-top: 35px;
-}
-
-.ironhackFooter {
-  width: 50px;
-}
-
-.H2Footer {
-  font-size: 21px;
-}
-
-.aFooter {
-  color: white;
-  text-decoration: none;
-
-}
-
-.links {
-  display: flex;
-  justify-content: space-around;
-}
-
-.aFooter:hover {
-  color: #ff9c6e;
-}
-
-.footer-div {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-}
-
-.pFooter {
-  margin-top: 15px;
-}
-
-
-
-
 
 /* NAVBAR */
 #navbarContainer {
@@ -106,14 +45,11 @@ footer {
 }
 
 #navbarText {
-  /* justify-content: space-between; */
-  /* list-style-type: none; */
   color: #294b53;
 }
 
 #nav-links {
   display: flex;
-  /* width: 177px; */
 }
 
 a:hover {
@@ -172,16 +108,57 @@ ul {
   padding: 0;
 }
 
-/* 
-body {
-  box-sizing: content-box;
-} */
+/* FOOTER */
+footer {
+  clear: both;
+  position: relative;
+  margin-top: 0px;
+  color: white;
+  background-color: #294B53;
+}
 
-/* @media (max-width: 654px) {
-  .col-sm {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-} */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.logoFooter {
+  width: 50px;
+  margin-top: 35px;
+}
+
+.ironhackFooter {
+  width: 50px;
+}
+
+.H2Footer {
+  font-size: 21px;
+}
+
+.aFooter {
+  color: white;
+  text-decoration: none;
+
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.aFooter:hover {
+  color: #ff9c6e;
+}
+
+.footer-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.pFooter {
+  margin-top: 15px;
+}
