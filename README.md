@@ -56,8 +56,11 @@ Book-search-results - As a user you want to be able to search for a book and acc
 
 ## ROUTES
 
+//Index
 - GET / 
   - renders the homepage
+
+//Auth
 - GET /auth/signup
   - redirects to / if user logged in
   - renders the signup form
@@ -69,31 +72,47 @@ Book-search-results - As a user you want to be able to search for a book and acc
     - password
 - GET /auth/login
   - redirects to / if user logged in
-  - renders the login form (with flash msg)
+  - renders the login page
 - POST /auth/login
   - redirects to / if user logged in
   - body:
     - username
     - password
 - POST /auth/logout
-  - body: (empty)
-
-- GET /events
-  - renders the event list + the create form
-- POST /events/create 
-  - redirects to / if user is anonymous
   - body: 
-    - name
-    - date
-    - location
-    - description
-- GET /events/:id
-  - renders the event detail page
-  - includes the list of attendees
-  - attend button if user not attending yet
-- POST /events/:id/attend 
-  - redirects to / if user is anonymous
-  - body: (empty - the user is already stored in the session)
+  - render the login page
+
+//User
+-GET /:id/delete
+ -deletes user
+-GET /:id/edit
+- renders edit profile form
+-POST /:id/edit
+  -renders edit page with error message if username or password invalid
+  -body:
+    - username
+    - email
+    - password
+    -avatarUrl
+-GET /profile
+  -renders user profile
+
+//Book search
+- GET search/book-search
+  - renders the search results
+- GET /:id
+  - renders the book details
+- POST /:id
+  - renders the bookshelf/my-saved-books 
+
+//Saved book in Bookshelf
+- GET /my-saved-books
+  -renders pages/saved-books/saved-book-list
+  -displays saved books & Populate user
+- GET / my-created-books
+  -renders pages/user-books/my-book-list
+  -displays created books & Populate user
+
 
 ## MODELS
 

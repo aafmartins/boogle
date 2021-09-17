@@ -1,5 +1,4 @@
-// console.log("this is our current url", window.location)
-
+// THIS EVENT LISTENER DISABLES THE BUTTONS BASED ON THE CURRENT URL
 window.addEventListener("load", () => {
     if (window.location.pathname === "/bookshelf/my-saved-books") {
         const savedBookBtn1 = document.getElementById("mySavedBooksBtnInSavedBook")

@@ -51,6 +51,7 @@ router.get("/book-search", (req, res, next) => {
       res.render("pages/search/search-results", {
         books: result,
         style: "Search-Result/list.css",
+        layout: req.session.currentUser ? "layout" : "anonLayout",
       });
     })
     .catch((err) => {

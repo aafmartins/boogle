@@ -66,7 +66,6 @@ label.myLabel input[type="file"] {
   top: -1000px;
 }
 
-/***** Example custom styling *****/
 .myLabel {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -87,69 +86,10 @@ label.myLabel input[type="file"] {
   background: #ccf;
 }
 
-.myLabel :invalid + span {
+.myLabel :invalid+span {
   color: #294b53;
 }
 
-.myLabel :valid + span {
+.myLabel :valid+span {
   color: #ff9c6e;
 }
-
-/* body {
-  background-color: #ffffff;
-  color: #294b53;
-}
-
-img {
-  height: 250px;
-}
-
-.submit-btn {
-  margin: 5px;
-  text-align: center;
-  color: white;
-  background: #ff9c6e;
-  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-  border-radius: 2px;
-  border-color: #ff9c6e;
-  width: 174px;
-  padding: 5px 16px;
-}
-
-::placeholder,
-select {
-  color: rgba(0, 0, 0, 0.25);
-}
-
-input,
-select {
-  display: flex;
-  margin-top: 4px;
-  width: 286px;
-  padding: 8px 12px;
-  border: 1px solid #d9d9d9;
-  box-sizing: border-box;
-  border-radius: 2px;
-}
-
-form {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #294b53;
-}
-
-h1 {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 800;
-  text-align: center;
-  margin: 20px;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 0;
-  padding-bottom: 0;
-} */

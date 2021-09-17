@@ -22,9 +22,13 @@
 
 {{#unless result}}
 <div class="nothing-here-container">
-<h1>You have no saved books yet...</h1>
+<h3>You have no saved books yet...</h3>
 </div>
 {{/unless}}
+
+    <a href="/">
+        <button class="create-btn">Save a book!</button>
+    </a>
 
 <ul>
   {{#each result}}
