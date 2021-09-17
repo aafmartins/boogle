@@ -10,7 +10,7 @@ router.get("/", function (req, res, next) {
     .sort({
       createdAt: -1
     })
-    .limit(11)
+    .limit(10)
     .then((latestBooks) => {
       User.find()
         .then((users) => {
